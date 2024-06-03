@@ -6,3 +6,9 @@
   width: 100vw;
   height: 100vh;
 }
+
+@layer components {
+  .header {
+    @apply flex items-center bg-white;
+  }
+}

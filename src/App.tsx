@@ -6,14 +6,14 @@ import Navbar from './components/Navbar';
 const App = () => {
   return (
     <Layout className="container">
-      <Header className="flex items-center bg-white">
+      <Header className="header">
         <Navbar />
       </Header>
       <Layout>
         <Sider></Sider>
         <Layout>
           <Content>
-            <h1 className="text-red-700">Hell</h1>
+            <h1 className="text-red-700">Con Cac</h1>
           </Content>
         </Layout>
       </Layout>
