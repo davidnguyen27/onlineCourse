@@ -1,4 +1,12 @@
+import { useNavigate } from 'react-router-dom';
+
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleCartClick = () => {
+    navigate('/cart');
+  };
+
   return (
     <>
       <div className="flex items-center w-1/2">
@@ -24,7 +32,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="flex justify-end items-center w-1/2">
-        <div className="cursor-pointer text-xl mx-3">
+        <div className="cursor-pointer text-xl mx-3" onClick={handleCartClick}>
           <i className="fa-solid fa-cart-shopping"></i>
         </div>
         <button className="rounded-xl border-amber-600 bg-amber-600 h-12 w-24 leading-10 hover:bg-amber-700">
