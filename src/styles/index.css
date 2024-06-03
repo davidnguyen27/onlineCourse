@@ -2,14 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-.container {
-  width: 100vw;
-  height: 100vh;
-}
-
 @layer components {
   .header {
-    @apply flex items-center bg-white;
+    @apply w-full flex justify-between bg-slate-200 p-0 drop-shadow-xl;
+  }
+
+  .sider {
+    @apply h-full bg-amber-600 !important;
+  }
+
+  .footer {
+    @apply w-full bg-slate-200;
   }
 }
 
