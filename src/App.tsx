@@ -13,7 +13,7 @@ const App = () => {
         <Sider></Sider>
         <Layout>
           <Content>
-            <h1 className="text-red-700">Hello</h1>
+            <h1 className="text-red-700">Hell</h1>
           </Content>
         </Layout>
       </Layout>
