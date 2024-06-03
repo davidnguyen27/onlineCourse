@@ -1,8 +1,16 @@
+import { Layout } from 'antd';
+import Sider from 'antd/es/layout/Sider';
+import { Content, Header } from 'antd/es/layout/layout';
+
 const App = () => {
   return (
-    <div>
-      <h1 className="font-semibold">Hello tailwindcss</h1>
-    </div>
+    <Layout className="container">
+      <Sider></Sider>
+      <Layout>
+        <Header></Header>
+        <Content>abc</Content>
+      </Layout>
+    </Layout>
   );
 };
 
