@@ -5,6 +5,7 @@ import AppHeader from '../components/AppHeader';
 import AppFooter from '../components/AppFooter';
 import AppSider from '../components/AppSider';
 import { useSider } from '../app/context/SiderProvider';
+import CourseHorizontal from '../components/CourseHorizontal';
 
 const HomePage: React.FC = () => {
   const { collapsed } = useSider();
@@ -19,8 +20,8 @@ const HomePage: React.FC = () => {
           <AppSider className={`transition-all duration-75 ${collapsed ? 'w-0' : 'w-64'}`} />
         </Sider>
         <Layout className="flex flex-col flex-1">
-          <Content className="flex-1">
-            <h1 className="text-red-700">Content</h1>
+          <Content className="flex-1 p-6 overflow-auto">
+            <CourseHorizontal />
           </Content>
           <Footer className="footer">
             <AppFooter />
