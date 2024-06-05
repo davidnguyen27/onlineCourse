@@ -3,7 +3,6 @@ import { Content, Header } from "antd/es/layout/layout";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import React from "react";
-import Navbar from "../components/Navbar";
 
 const { Item } = Form;
 
@@ -57,18 +56,16 @@ const App: React.FC = () => {
                 Forgot password
               </a>
             </Item>
-
             <Item>
               <Button
                 type="primary"
                 htmlType="submit"
                 className="login-form-button"
-                style={{ width: "100%" }}
               >
                 Log in
               </Button>
-              Or <a href="RegisterPage">register now!</a>
             </Item>
+            Or <a href="RegisterPage">register now!</a>
           </Form>
         </div>
       </Content>

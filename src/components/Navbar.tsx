@@ -28,10 +28,10 @@ const Navbar = () => {
           <i className="fa-solid fa-cart-shopping"></i>
         </div>
         <button className="rounded-xl border-amber-600 bg-amber-600 h-12 w-24 leading-10 hover:bg-amber-700">
-          Sign in
+          <a href="LoginPage">Sign In</a>
         </button>
         <button className="rounded-xl border-slate-400 bg-gray-300 hover:bg-gray-400 h-12 w-24 leading-10 mx-3">
-          Sign up
+          <a href="RegisterPage">Sign Up</a>
         </button>
       </div>
     </>

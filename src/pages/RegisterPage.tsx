@@ -55,10 +55,6 @@ const App: React.FC = () => {
             form={form}
             name="register"
             onFinish={onFinish}
-            initialValues={{
-              residence: ["", "", ""],
-              prefix: "84",
-            }}
             style={{ maxWidth: 600 }}
             scrollToFirstError
           >
