@@ -1,0 +1,11 @@
+.custom-carousel .slick-slide {
+  padding: 0 8px; /* Adjust this value to control the spacing */
+}
+
+.custom-carousel .slick-list {
+  margin: 0 -8px; /* Adjust this value to control the spacing */
+}
+
+.slick-arrow {
+  color: black;
+}
