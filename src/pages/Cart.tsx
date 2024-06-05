@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CartItem from "../models/ICartItem";
-import CartSummary from "../models/CartSummary";
+import CartItem from "../components/CartItem";
+import CartSummary from "../components/CartSummary";
 
 const initialCartItems = [
   {
@@ -93,7 +93,6 @@ const Cart: React.FC = () => {
                 originalPrice={originalPrice}
                 discountPrice={discountPrice}
                 total={total}
-                onCheckout={() => alert("Check Out Now")}
               />
             </div>
           </div>

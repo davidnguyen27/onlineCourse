@@ -21,7 +21,7 @@ const CartItem: React.FC<CartItemProps> = ({ item, onRemove }) => {
   return (
     <div className="max-w-sm w-full sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto mb-6">
       <div className="bg-white shadow-md rounded-lg overflow-hidden">
-        <div className="bg-gray-100 p-4 relative flex items-center justify-between">
+        <div className="p-4 relative flex items-center justify-between">
           <img
             src={item.image}
             alt={item.name}

@@ -1,18 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface CartSummaryProps {
   total: number;
   originalPrice: number;
   discountPrice: number;
-  onCheckout: () => void;
 }
 
-const CartSummary: React.FC<CartSummaryProps> = ({ total, originalPrice, discountPrice, onCheckout }) => {
+const CartSummary: React.FC<CartSummaryProps> = ({ total, originalPrice, discountPrice }) => {
+  const navigate = useNavigate();
   return (
-    <div className="p-4 bg-gray-100 border rounded-lg shadow-sm">
+    <div className="p-4 border rounded-lg shadow-sm">
       <div className="relative mb-4">
         <h2 className="font-bold text-lg inline-block">Total</h2>
-        <span className="block h-1 bg-red-500 mt-2" style={{ width: 'calc(20% + 4px)', marginLeft: '-2px', marginBottom: '2px' }}></span>
+        <span className="block h-1 bg-red-500 mt-2" style={{ width: 'calc(15% + 4px)', height: '1.5px', marginLeft: '-2px', marginBottom: '2px' }}></span>
       </div>
       <div className="font-semibold flex justify-between mt-2">
         <span>Original Price</span>
@@ -31,7 +32,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({ total, originalPrice, discoun
       <hr className='mt-4'/>
       <button
         className="mt-4 bg-red-500 text-white py-2 px-14 rounded transition hover:bg-black hover:text-white block mx-auto"
-        onClick={onCheckout}
+        onClick={() => navigate('/checkout')}
       >
         Check Out Now
       </button>
