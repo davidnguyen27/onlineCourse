@@ -26,7 +26,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({ total, originalPrice, discoun
       <hr className='mt-4'/>
       <div className="font-bold flex justify-between mt-2">
         <span>Total</span>
-        <span className="font-semibold text-gray-500">${total}</span>
+        <span className="text-black">${total}</span>
       </div>
       <hr className='mt-4'/>
       <button

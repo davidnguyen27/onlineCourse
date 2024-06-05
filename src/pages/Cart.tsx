@@ -25,6 +25,28 @@ const initialCartItems = [
     image:
       "https://wesbos.com/static/2c1ec59aaf97caa738566a34f5cea0ea/faec4/Screen-Shot-2018-02-28-at-10.13.05-AM.png",
   },
+  {
+    id: 3,
+    name: "Typescripts",
+    price: 40.0,
+    quantity: 1,
+    discount: 10.0,
+    title: "Web Development",
+    author: "Mac Kolarob",
+    image:
+      "https://media.dev.to/cdn-cgi/image/width=1080,height=1080,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjaha71mccl3tg1ifvxsg.png",
+  },
+  {
+    id: 4,
+    name: "How to learn soft skills and build your career ?",
+    price: 50.0,
+    quantity: 1,
+    discount: 20.0,
+    title: "Soft Skills",
+    author: "Kun Aguero",
+    image:
+      "https://pharmaconnections.in/wp-content/uploads/2024/01/soft-skills-scaled-1.jpeg",
+  },
 ];
 
 const Cart: React.FC = () => {
@@ -60,9 +82,11 @@ const Cart: React.FC = () => {
         <div className="max-w-7xl mx-auto p-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="md:col-span-2 bg-white rounded-lg shadow-md p-4">
-              {cartItems.map((item) => (
-                <CartItem key={item.id} item={item} onRemove={handleRemove} />
-              ))}
+              <div className="max-h-96 overflow-y-auto">
+                {cartItems.map((item) => (
+                  <CartItem key={item.id} item={item} onRemove={handleRemove} />
+                ))}
+              </div>
             </div>
             <div className="bg-white rounded-lg shadow-md p-4">
               <CartSummary
