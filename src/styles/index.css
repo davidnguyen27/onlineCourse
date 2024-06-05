@@ -5,11 +5,12 @@
 @layer pages {
   .container {
     width: 100%;
-    height: 100vh;
+    height: 120%;
     background-color: #f0f2f5;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
   }
 
   .form-container {
@@ -22,7 +23,20 @@
     padding: 20px;
     background-color: #fff;
     transition: box-shadow 0.3s ease-in-out;
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  .form-container-2 {
+    margin-top: 15px;
+    width: 100%;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease-in-out;
+    margin-top: 10px;
   }
 
   .form-wrapper {
@@ -49,6 +63,8 @@
 @layer components {
   .header {
     @apply w-full flex justify-between bg-slate-200 p-0 drop-shadow-xl;
+    border-radius: 5px;
+    padding: 5px;
   }
 
   .sider {

@@ -6,6 +6,7 @@ import AppFooter from "./components/AppFooter";
 import AppSider from "./components/AppSider";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
             <Content className="flex-1 p-4">
               <Routes>
                 <Route path="/LoginPage" element={<LoginPage />} />
+                <Route path="/RegisterPage" element={<RegisterPage />} />
               </Routes>
             </Content>
             <Footer className="footer">

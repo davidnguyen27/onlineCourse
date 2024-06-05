@@ -67,7 +67,7 @@ const App: React.FC = () => {
               >
                 Log in
               </Button>
-              Or <a href="Register.tsx">register now!</a>
+              Or <a href="RegisterPage">register now!</a>
             </Item>
           </Form>
         </div>
