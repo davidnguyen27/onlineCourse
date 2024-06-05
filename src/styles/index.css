@@ -8,7 +8,7 @@
   }
 
   .header {
-    @apply w-full flex justify-between bg-slate-200 p-0 drop-shadow-xl;
+    @apply w-full flex justify-between bg-slate-200 p-0;
   }
 
   .wrapper-50 {
@@ -48,12 +48,12 @@
   }
 
   .sider {
-    @apply h-full bg-amber-600 !important;
+    @apply h-full bg-slate-200 !important;
     @apply transition-transform duration-75;
   }
 
   .sider-item {
-    @apply p-3 hover:bg-zinc-200;
+    @apply p-3 hover:bg-amber-600;
   }
 
   .sider-text {
@@ -61,10 +61,10 @@
   }
 
   .active {
-    @apply bg-zinc-200;
+    @apply bg-amber-600;
   }
 
   .footer {
-    @apply w-full bg-slate-200;
+    @apply w-full bg-stone-800;
   }
 }
