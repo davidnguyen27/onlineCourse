@@ -1,9 +1,10 @@
-import HomePage from './pages/HomePage';
+import React from 'react';
+import AppRoutes from './routes/AppRouter'; // Assuming both files are in the same directory
 
 const App = () => {
   return (
     <>
-      <HomePage />
+      <AppRoutes />
     </>
   );
 };
