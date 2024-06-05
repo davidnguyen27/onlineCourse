@@ -29,6 +29,7 @@
 
   .form-container-2 {
     margin-top: 15px;
+    max-width: 800px;
     width: 100%;
     margin: auto;
     border: 1px solid #ccc;
@@ -54,8 +55,21 @@
   }
 
   .login-form-button {
-    float: left;
-    width: 50%;
+    width: 100%;
+  }
+
+  .Login {
+    font-size: 40px;
+    margin-left: 120px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 1000;
+  }
+
+  .Register {
+    font-size: 40px;
+    margin-left: 300px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 1000;
   }
 }
 

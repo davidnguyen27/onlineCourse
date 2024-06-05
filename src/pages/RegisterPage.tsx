@@ -46,7 +46,6 @@ const App: React.FC = () => {
 
   return (
     <Layout className="container">
-      <Header className="header">Register</Header>
       <Content>
         <div className="form-container-2">
           <Form
@@ -58,6 +57,7 @@ const App: React.FC = () => {
             style={{ maxWidth: 600 }}
             scrollToFirstError
           >
+            <div className="Register">Register</div>
             <Form.Item
               name="email"
               label="E-mail"
@@ -120,7 +120,10 @@ const App: React.FC = () => {
               name="phone"
               label="Phone Number"
               rules={[
-                { required: true, message: "Please input your phone number!" },
+                {
+                  required: true,
+                  message: "Please input your phone number!",
+                },
               ]}
             >
               <Input addonBefore={prefixSelector} style={{ width: "100%" }} />
