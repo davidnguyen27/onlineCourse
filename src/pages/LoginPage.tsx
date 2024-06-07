@@ -1,22 +1,22 @@
-import { Layout } from "antd";
-import { Content, Header } from "antd/es/layout/layout";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input } from "antd";
-import GoogleButton from "react-google-button";
+import { Layout } from 'antd';
+import { Content, Header } from 'antd/es/layout/layout';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { Button, Checkbox, Form, Input } from 'antd';
+import GoogleButton from 'react-google-button';
 
 const { Item } = Form;
 
 const App: React.FC = () => {
   const onFinish = (values: any) => {
-    console.log("Received values of form: ", values);
+    console.log('Received values of form: ', values);
   };
 
   const myStyle = {
     backgroundImage: "url('public/images/login.jpg')",
-    height: "350vh",
-    fontSize: "50px",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
+    height: '350vh',
+    fontSize: '50px',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
   };
 
   return (
@@ -37,14 +37,11 @@ const App: React.FC = () => {
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Username!",
+                    message: 'Please input your Username!',
                   },
                 ]}
               >
-                <Input
-                  prefix={<UserOutlined className="site-form-item-icon" />}
-                  placeholder="Username"
-                />
+                <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
               </Item>
               <Item
                 className="input-item"
@@ -52,7 +49,7 @@ const App: React.FC = () => {
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Password!",
+                    message: 'Please input your Password!',
                   },
                 ]}
               >
@@ -72,17 +69,13 @@ const App: React.FC = () => {
                 </a>
               </Item>
               <Item>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  className="login-form-button"
-                >
+                <Button type="primary" htmlType="submit" className="login-form-button">
                   Log in
                 </Button>
               </Item>
               <GoogleButton
                 onClick={() => {
-                  console.log("Google button clicked");
+                  console.log('Google button clicked');
                 }}
               />
               Or <a href="RegisterPage">register now!</a>
