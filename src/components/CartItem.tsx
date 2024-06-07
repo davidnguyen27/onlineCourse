@@ -15,7 +15,6 @@ interface CartItemProps {
 }
 
 const CartItem: React.FC<CartItemProps> = ({ item, onRemove }) => {
-  // Tính toán giá hiện tại bằng cách trừ giá gốc cho giảm giá
   const currentPrice = item.price - item.discount;
 
   return (
@@ -47,11 +46,9 @@ const CartItem: React.FC<CartItemProps> = ({ item, onRemove }) => {
             </div>
           </div>
           <div className="flex flex-col items-end">
-            {/* Hiển thị giá hiện tại */}
             <div className="text-black font-semibold text-sm">
               ${currentPrice}
             </div>
-            {/* Hiển thị giá gốc với dấu gạch ngang */}
             <div className="text-gray-500 text-sm line-through">
               ${item.price}
             </div>

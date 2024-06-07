@@ -1,7 +1,14 @@
 import { useSider } from '../app/context/SiderProvider';
+import { useNavigate } from 'react-router-dom';
 
 const AppHeader: React.FC = () => {
   const { toggleSider } = useSider();
+
+  const navigate = useNavigate();
+
+  const handleCartClick = () => {
+    navigate('/cart');
+  };
 
   return (
     <>
@@ -28,7 +35,7 @@ const AppHeader: React.FC = () => {
         </div>
       </div>
       <div className="styles-x-axis justify-end w-1/2">
-        <div className="cart-styles">
+        <div className="cursor-pointer text-xl mx-3" onClick={handleCartClick}>
           <i className="fa-solid fa-cart-shopping"></i>
         </div>
         <button className="sign-in-button">Sign in</button>

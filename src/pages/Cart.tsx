@@ -1,6 +1,13 @@
 import React, { useState } from "react";
+import { Breadcrumb, Layout } from "antd";
+import { useNavigate } from "react-router-dom";
 import CartItem from "../components/CartItem";
 import CartSummary from "../components/CartSummary";
+import "../styles/index.css";
+import AppHeader2 from "../components/AppHeader2";
+import AppFooter from "../components/AppFooter";
+
+const { Content, Footer } = Layout;
 
 const initialCartItems = [
   {
@@ -32,7 +39,7 @@ const initialCartItems = [
     quantity: 1,
     discount: 10.0,
     title: "Web Development",
-    author: "Mac Kolarob",
+    author: "Mac",
     image:
       "https://media.dev.to/cdn-cgi/image/width=1080,height=1080,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjaha71mccl3tg1ifvxsg.png",
   },
@@ -51,14 +58,8 @@ const initialCartItems = [
 
 const Cart: React.FC = () => {
   const [cartItems, setCartItems] = useState(initialCartItems);
-
-  // const handleQuantityChange = (id: number, quantity: number) => {
-  //   setCartItems((prevItems) =>
-  //     prevItems.map((item) =>
-  //       item.id === id ? { ...item, quantity } : item
-  //     )
-  //   );
-  // };
+  const [nightMode, setNightMode] = useState(false);
+  const navigate = useNavigate();
 
   const handleRemove = (id: number) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
@@ -72,33 +73,69 @@ const Cart: React.FC = () => {
   const total = originalPrice - discountPrice;
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col">
-      <div className="bg-white">
-        <div className="max-w-7xl mx-auto p-4">
-          <h1 className="text-2xl font-semibold mb-4">Shopping Cart</h1>
-        </div>
-      </div>
-      <div className="flex-grow">
-        <div className="max-w-7xl mx-auto p-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="md:col-span-2 bg-white rounded-lg shadow-md p-4">
-              <div className="max-h-96 overflow-y-auto">
-                {cartItems.map((item) => (
-                  <CartItem key={item.id} item={item} onRemove={handleRemove} />
-                ))}
-              </div>
+    <Layout className={nightMode ? "night-mode" : ""}>
+      <AppHeader2 />
+
+      <Content>
+        <div className="min-h-screen bg-gray-100 flex flex-col">
+          <div className="bg-white">
+            <Breadcrumb style={{ margin: "16px 0", padding: "0 140px" }}>
+              <Breadcrumb.Item>
+                <span
+                  onClick={() => navigate("/")}
+                  style={{ cursor: "pointer" }}
+                >
+                  Home
+                </span>
+              </Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <span
+                  onClick={() => navigate("/cart")}
+                  style={{ cursor: "pointer" }}
+                >
+                  Cart
+                </span>
+              </Breadcrumb.Item>
+            </Breadcrumb>
+            <div style={{ margin: "16px 0", padding: "0 140px" }}>
+              <h1 className="text-2xl font-semibold mb-4">Shopping Cart</h1>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-4">
-              <CartSummary
-                originalPrice={originalPrice}
-                discountPrice={discountPrice}
-                total={total}
-              />
+          </div>
+          <div className="flex-grow">
+            <div className="max-w-7xl mx-auto p-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="md:col-span-2 bg-white rounded-lg shadow-md p-4">
+                  {cartItems.map((item) => (
+                    <CartItem
+                      key={item.id}
+                      item={item}
+                      onRemove={handleRemove}
+                    />
+                  ))}
+                </div>
+                <div className="bg-white rounded-lg shadow-md p-4 h-72">
+                  <CartSummary
+                    originalPrice={originalPrice}
+                    discountPrice={discountPrice}
+                    total={total}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </Content>
+      <Footer
+        style={{
+          backgroundColor: "black",
+          textAlign: "center",
+          width: "100%",
+          padding: "24px 0",
+        }}
+      >
+        <AppFooter />
+      </Footer>
+    </Layout>
   );
 };
 

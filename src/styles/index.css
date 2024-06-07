@@ -67,5 +67,30 @@
   .footer {
     @apply w-full bg-stone-800;
   }
-}
 
+  .night-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+  }
+
+  .night-mode .ant-layout-header {
+    background: #2b1611;
+  }
+
+  .night-mode .ant-layout-content {
+    background: #2b1611;
+  }
+
+  .night-mode .ant-layout-footer {
+    background: #2b1611;
+  }
+
+  .hover-red:hover {
+    color: red;
+  }
+
+  .text-15 {
+    font-size: 15px;
+  }
+  
+}
