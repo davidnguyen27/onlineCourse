@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  height: 100%;
+}
+
+.layout {
+  height: 100%;
+}
+
 @layer components {
   .styles-x-axis {
     @apply flex items-center;
@@ -16,7 +25,7 @@
   }
 
   .menu-bar {
-    @apply flex items-center justify-center bg-amber-600 text-2xl h-16 cursor-pointer mr-4 w-16 hover:bg-amber-700;
+    @apply flex items-center justify-center bg-amber-500 text-2xl h-16 cursor-pointer mr-4 w-16 hover:bg-amber-600;
   }
 
   .logo-box {
@@ -40,7 +49,7 @@
   }
 
   .sign-in-button {
-    @apply rounded-xl border-amber-600 bg-amber-600 h-12 w-24 leading-10 hover:bg-amber-700;
+    @apply rounded-xl bg-amber-500 h-12 w-24 leading-10 hover:bg-amber-600;
   }
 
   .sign-up-button {
@@ -53,15 +62,7 @@
   }
 
   .sider-item {
-    @apply p-3 hover:bg-amber-600;
-  }
-
-  .sider-text {
-    @apply ml-2 text-stone-800 text-base;
-  }
-
-  .active {
-    @apply bg-amber-600;
+    @apply p-3 hover:bg-amber-500;
   }
 
   .footer {

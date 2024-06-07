@@ -1,4 +1,4 @@
-const AppFooter = () => {
+const AppFooter: React.FC = () => {
   return (
     <>
       <div className="grid grid-cols-4 gap-4 max-md:grid-cols-2">
