@@ -1,9 +1,9 @@
-import HomePage from './pages/HomePage';
+import AppRouter from './routes/AppRouter';
 
 const App = () => {
   return (
     <>
-      <HomePage />
+      <AppRouter />
     </>
   );
 };
