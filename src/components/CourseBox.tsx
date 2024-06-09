@@ -4,8 +4,8 @@ import coursevideo from '../assets/coursevideo.mp4';
 
 interface CourseBoxProps {
   courseData: {
-    title: string;
-    description: string;
+    title: String;
+    description: String;
   };
 }
 

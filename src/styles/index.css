@@ -65,6 +65,6 @@
   }
 
   .footer {
-    @apply w-full bg-stone-800;
+    @apply w-full bg-stone-800 text-white py-4;
   }
 }

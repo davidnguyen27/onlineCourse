@@ -11,24 +11,24 @@ interface CourseSubTabProps {
 const CourseSubTab: React.FC<CourseSubTabProps> = ({ activeTab, setActiveTab, courseData }) => {
   const AboutTabContent = () => (
     <div>
-      <h3>Requirements</h3>
+      <h3 className='font-semibold rounded'>Requirements</h3>
       <ul className="list-disc ml-4 text-gray-700 rounded">
         <li>Have a computer with Internet</li>
         <li>Be ready to learn an insane amount of awesome stuff</li>
         <li>Prepare to build real web apps!</li>
       </ul>
-      <h3>Description</h3>
-      <ul className="list-disc ml-4 text-gray-700 rounded">
+      <h3 className='font-semibold'>Description</h3>
+      <ul className="list-disc ml-4 text-gray-700 ">
         <li>
           Just updated to include Bootstrap 4.1.3! Hi! Welcome to the Web Developer Bootcamp, the only course you need to learn web development...
         </li>
       </ul>
-      <h3>Who this course is for</h3>
-      <ul className="list-disc ml-4 text-gray-700 rounded">
+      <h3 className='font-semibold '>Who this course is for</h3>
+      <ul className="list-disc ml-4 text-gray-700 ">
         <li>This course is for anyone who wants to learn about web development, regardless of previous experience...</li>
       </ul>
       <h3>What you'll learn</h3>
-      <ul className="list-disc ml-4 text-gray-700 rounded">
+      <ul className="list-disc ml-4 text-gray-700 ">
         <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies elit porttitor, ultrices enim a, commodo dolor...</li>
         <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies elit porttitor, ultrices enim a, commodo dolor...</li>
         <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies elit porttitor, ultrices enim a, commodo dolor...</li>
