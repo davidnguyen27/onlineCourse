@@ -19,5 +19,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         </NightModeProvider>
       </BrowserRouter>
     </ConfigProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
