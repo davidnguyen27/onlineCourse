@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "../../styles/index.css";
-import PaymentButton from "./PaymentButton";
+import PaymentButton from "../checkout/PaymentButton";
 import PaymentForm from "../form/PaymentForm";
-import OrderTotal from "./OrderTotal";
+import Confirm from "./Confirm";
 
 interface OrderSummaryProps {
   total: number;
@@ -10,7 +10,7 @@ interface OrderSummaryProps {
   discountPrice: number;
 }
 
-const SelectPayment: React.FC<OrderSummaryProps> = ({
+const PaymentMembership: React.FC<OrderSummaryProps> = ({
   total,
   originalPrice,
   discountPrice,
@@ -44,7 +44,7 @@ const SelectPayment: React.FC<OrderSummaryProps> = ({
         handlePaymentSelect={handlePaymentSelect}
       />
       {selectedPayment && <PaymentForm selectedPayment={selectedPayment} />}
-      <OrderTotal
+      <Confirm
         total={total}
         originalPrice={originalPrice}
         discountPrice={discountPrice}
@@ -58,4 +58,4 @@ const SelectPayment: React.FC<OrderSummaryProps> = ({
   );
 };
 
-export default SelectPayment;
+export default PaymentMembership;

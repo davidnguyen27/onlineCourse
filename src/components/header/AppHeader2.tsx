@@ -1,66 +1,71 @@
-import { Avatar, Menu, Switch, Layout, Button, Dropdown } from 'antd';
+import { Avatar, Menu, Switch, Layout, Button, Dropdown } from "antd";
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import { UserOutlined } from "@ant-design/icons";
+import "../../styles/header.css";
 const { Header } = Layout;
 
-
 const AppHeader2: React.FC = () => {
-    const navigate = useNavigate();
-    const [nightMode, setNightMode] = useState(false);
+  const navigate = useNavigate();
+  const [nightMode, setNightMode] = useState(false);
 
-    const userMenu = (
-        <Menu>
-          <Menu.Item key="user-info" disabled>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <Avatar src="https://via.placeholder.com/40" /> {/* Replace with actual avatar URL */}
-              <div style={{ marginLeft: 10 }}>
-                <div><strong>John Doe</strong></div>
-                <div>johndoe@example.com</div>
-              </div>
+  const userMenu = (
+    <Menu>
+      <Menu.Item key="user-info" disabled>
+        <div className="user-menu">
+          <Avatar src="https://via.placeholder.com/40" />{" "}
+          {/* Replace with actual avatar URL */}
+          <div style={{ marginLeft: 10 }}>
+            <div>
+              <strong>John Doe</strong>
             </div>
-          </Menu.Item>
-          <Menu.Divider />
-          <Menu.Item key="view-profile" onClick={() => navigate('/profile')}>
-            View Profile
-          </Menu.Item>
-          <Menu.Item key="toggle-night-mode">
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span>Night Mode</span>
-              <Switch checked={nightMode} onChange={() => setNightMode(!nightMode)} />
-            </div>
-          </Menu.Item>
-          <Menu.Divider />
-          <Menu.Item key="logout">
-            Logout
-          </Menu.Item>
-        </Menu>
-      );
+            <div>johndoe@example.com</div>
+          </div>
+        </div>
+      </Menu.Item>
+      <Menu.Divider />
+      <Menu.Item key="view-profile" onClick={() => navigate("/profile")}>
+        View Profile
+      </Menu.Item>
+      <Menu.Item key="toggle-night-mode">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <span>Night Mode</span>
+          <Switch
+            checked={nightMode}
+            onChange={() => setNightMode(!nightMode)}
+          />
+        </div>
+      </Menu.Item>
+      <Menu.Divider />
+      <Menu.Item key="logout">Logout</Menu.Item>
+    </Menu>
+  );
 
   return (
-<Header
-        style={{
-          background: nightMode ? '#1a1a1a' : "#ffffff", // Nền trắng hoặc đen tùy thuộc vào chế độ đêm
-          color: nightMode ? '#ffffff' : '#000000', // Màu chữ đen hoặc trắng tùy thuộc vào chế độ đêm
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "0 20px",
-        }}
+    <Header className={`header-2 ${nightMode ? "night-mode" : ""}`}>
+      <Button
+        className={`btn-header2 ${nightMode ? "night-mode" : ""}`}
+        onClick={() => navigate("/")}
       >
-        <Button style={{ background: nightMode ? '#000000' : '#1890ff', color: nightMode ? '#ffffff' : '#ffffff' }} onClick={() => navigate("/")}>
-          Back To Homepage
-        </Button>
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/FPT_Education_logo.svg/2560px-FPT_Education_logo.svg.png"
-          alt="FPT Education"
-          style={{ height: "40px", cursor: "pointer" }}
-          onClick={() => navigate("/")}
-        />
-        <Dropdown overlay={userMenu} trigger={['click']}>
-          <UserOutlined style={{ fontSize: '24px', cursor: 'pointer' }} />
-        </Dropdown>
-      </Header>  )
-}
+        Back To Homepage
+      </Button>
+      <img
+        className="logo-header2"
+        src="/logo/Fstudy123.png"
+        alt="F-Study"
+        onClick={() => navigate("/")}
+      />
+      <Dropdown overlay={userMenu} trigger={["click"]}>
+        <UserOutlined className="user-logo" />
+      </Dropdown>
+    </Header>
+  );
+};
 
-export default AppHeader2
+export default AppHeader2;

@@ -5,6 +5,7 @@ import HomePage from "../pages/HomePage";
 import SigninPage from "../pages/SigninPage";
 import SignupPage from "../pages/SignupPage";
 import PaidMembershipPage from "../pages/PaidMembership";
+import MembershipCheckOut from "../pages/MembershipCheckOut";
 
 const AppRouter = () => {
   return (
@@ -14,7 +15,8 @@ const AppRouter = () => {
       <Route path="sign-up" element={<SignupPage />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<CheckOut />} />
-      <Route path="/paid-membership" element={<PaidMembershipPage />}/>
+      <Route path="/paid-membership" element={<PaidMembershipPage />} />
+      <Route path="/membership-Checkout" element={<MembershipCheckOut />}/>
     </Routes>
 )};
 

@@ -19,7 +19,7 @@ const AppHeader: React.FC = () => {
           </div>
           <div className="logo-box">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/FPT_Education_logo.svg/2560px-FPT_Education_logo.svg.png"
+              src="/logo/Fstudy123.png"
               alt="FPT Education"
             />
           </div>
