@@ -43,27 +43,23 @@ const PaidMembershipPage: React.FC = () => {
           </div>
           <div className="flex-grow">
             <div className="max-w-7xl mx-auto p-4">
-                <div className="grid grid-cols-1 md:grid-cols-4 mt-10 gap-10">
-                    <div className="md:col-span-2 bg-white rounded-lg shadow-md p-4">
-                        <SelectMembership /> {/*BabyPlan*/}
-                    </div>
-                    <div className="md:col-span-2 bg-white rounded-lg shadow-md p-4">
-                        <SelectMembership2 /> {/*BusinessPlan*/}
-                    </div>
+              <div className="grid grid-cols-1 md:grid-cols-4 mt-10 gap-10">
+                <div className="md:col-span-2 bg-white rounded-lg shadow-md p-4">
+                  <SelectMembership /> {/* BabyPlan */}
                 </div>
+                <div className="md:col-span-2 bg-white rounded-lg shadow-md p-4">
+                  <SelectMembership2 /> {/* BusinessPlan */}
+                </div>
+                <div className="md:col-span-4 flex flex-col justify-center items-center">
+                  <h2 className="text-2xl p-4">Membership FAQ</h2>
+                  <p className="text-lg text-gray-500">Wait, what about...</p>
+                </div>
+                <div className="md:col-span-4 bg-white rounded-lg shadow-md mb-8 p-4">
+                  <MembershipFaq />
+                </div>
+              </div>
             </div>
           </div>
-          <div className="max-w-7xl p-4">
-          <div>
-            <h2 className="text-xl font-semibold mb-4">Membership FAQ</h2>
-          </div>
-          <div className=" mt-10">
-            <div className="md:col-span-4 bg-white rounded-lg shadow-md p-4">
-              <MembershipFaq />
-            </div>
-          </div>
-          </div>
-          
         </div>
       </Content>
 

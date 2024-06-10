@@ -40,14 +40,15 @@ const AppHeader2: React.FC = () => {
   return (
 <Header
         style={{
-          background: nightMode ? '#1a1a1a' : "#e2e8f0",
+          background: nightMode ? '#1a1a1a' : "#ffffff", // Nền trắng hoặc đen tùy thuộc vào chế độ đêm
+          color: nightMode ? '#ffffff' : '#000000', // Màu chữ đen hoặc trắng tùy thuộc vào chế độ đêm
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
           padding: "0 20px",
         }}
       >
-        <Button onClick={() => navigate("/")}>
+        <Button style={{ background: nightMode ? '#000000' : '#1890ff', color: nightMode ? '#ffffff' : '#ffffff' }} onClick={() => navigate("/")}>
           Back To Homepage
         </Button>
         <img

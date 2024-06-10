@@ -4,15 +4,17 @@ import CheckOut from "../pages/CheckOut";
 import HomePage from "../pages/HomePage";
 import SigninPage from "../pages/SigninPage";
 import SignupPage from "../pages/SignupPage";
+import PaidMembershipPage from "../pages/PaidMembership";
 
 const AppRouter = () => {
   return (
   <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="sign-in" element={<SigninPage />} />
-        <Route path="sign-up" element={<SignupPage />} />
+      <Route path="sign-up" element={<SignupPage />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<CheckOut />} />
+      <Route path="/paid-membership" element={<PaidMembershipPage />}/>
     </Routes>
 )};
 

@@ -21,7 +21,7 @@ const MembershipFaq: React.FC = () => {
 
   return (
     <div className='p-6'>
-        <ul className="space-y-2 mt-6">
+        <ul className="space-y-2">
           {features.map((feature, index) => (
             <React.Fragment key={index}>
               <li className="flex flex-col">
