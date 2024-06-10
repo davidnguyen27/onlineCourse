@@ -34,7 +34,6 @@ const AppHeader: React.FC = () => {
           </div>
         </div>
       </div>
-=======
       <div className="styles-x-axis w-1/2 justify-end">
         <div className="cart-styles" onClick={handleCartClick}> 
           <i className="fa-solid fa-cart-shopping"></i>
