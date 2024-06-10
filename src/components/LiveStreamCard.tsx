@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card } from 'antd';
 
 interface LiveStreamCardProps {
   name: string;
@@ -7,14 +6,14 @@ interface LiveStreamCardProps {
   avatar: string;
 }
 
-const LiveStreamCard: React.FC<LiveStreamCardProps> = ({ name, status, avatar }) => (
-  <Card
-    hoverable
-    className="w-40 flex-shrink-0"
-    cover={<img alt={name} src={avatar} className="p-4" />}
-  >
-    <Card.Meta title={name} description={status} />
-  </Card>
-);
+const LiveStreamCard: React.FC<LiveStreamCardProps> = ({ name, status, avatar }) => {
+  return (
+    <div className="flex-none w-40 h-40 bg-gray-200 rounded-lg shadow-md flex flex-col items-center justify-center">
+      <img src={avatar} alt={name} className="w-16 h-16 rounded-full mb-2" />
+      <p className="text-center">{name}</p>
+      <p className="text-red-500">{status}</p>
+    </div>
+  );
+};
 
 export default LiveStreamCard;
