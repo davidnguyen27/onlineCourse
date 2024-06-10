@@ -1,7 +1,7 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import HomePage from '../pages/HomePage';
-import SigninPage from '../pages/SigninPage';
-import SignupPage from '../pages/SignupPage';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "../pages/HomePage";
+import SigninPage from "../pages/SigninPage";
+import SignupPage from "../pages/SignupPage";
 
 const AppRouter = () => {
   return (

@@ -1,32 +1,24 @@
-import { Carousel } from 'antd';
-import CourseCard from './CourseCard';
+import { Carousel } from "antd";
+import CourseCard from "./CourseCard";
+import { responsiveItem } from "../utils/Responsive.carouselitem";
 
 const CarouselCourse = () => {
   return (
     <Carousel
       className="custom-carousel"
       dots={false}
-      slidesToShow={4}
       slidesToScroll={1}
+      slidesToShow={4}
       arrows
       infinite
       swipeToSlide
+      responsive={responsiveItem}
     >
-      <div className="flex justify-center">
-        <CourseCard />
-      </div>
-      <div className="flex justify-center">
-        <CourseCard />
-      </div>
-      <div className="flex justify-center">
-        <CourseCard />
-      </div>
-      <div className="flex justify-center">
-        <CourseCard />
-      </div>
-      <div className="flex justify-center">
-        <CourseCard />
-      </div>
+      <CourseCard />
+      <CourseCard />
+      <CourseCard />
+      <CourseCard />
+      <CourseCard />
     </Carousel>
   );
 };

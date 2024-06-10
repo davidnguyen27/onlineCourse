@@ -1,6 +1,6 @@
 const CourseCard: React.FC = () => {
   return (
-    <article className="rounded-md bg-slate-200 drop-shadow-md w-full cursor-pointer hover:-translate-y-2 transition ease-out hover:delay-75 hover:shadow-md">
+    <article className="h-auto w-auto cursor-pointer rounded-md bg-slate-200">
       <div className="p-4">
         <div>
           <img
@@ -8,19 +8,21 @@ const CourseCard: React.FC = () => {
             alt="Javascript"
           />
         </div>
-        <div className="flex justify-between my-3">
+        <div className="my-3 flex justify-between">
           <div>
             <span>1M Students</span>
           </div>
           <div>
-            <i className="fa-solid fa-ellipsis-vertical cursor-pointer"></i>
+            <i className="fa-solid fa-ellipsis-vertical cursor-pointer hover:text-amber-500"></i>
           </div>
         </div>
-        <h3 className="font-semibold">The Complete Course Javascript Course 2024: From Zero to Expert!</h3>
+        <h3 className="font-semibold">
+          The Complete Course Javascript Course 2024: From Zero to Expert!
+        </h3>
         <div className="my-2">
-          <span className="font-light text-xs">Web development</span>
+          <span className="text-xs font-light">Web development</span>
         </div>
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between">
           <p className="text-xs">
             By <span className="font-medium">Jonas Schmedtmann</span>
           </p>

@@ -1,5 +1,6 @@
-import { Carousel } from 'antd';
-import CourseCard from './CourseCard';
+import { Carousel } from "antd";
+import CourseCard from "./CourseCard";
+import { responsiveItem } from "../utils/Responsive.carouselitem";
 
 const CarouselSeller = () => {
   return (
@@ -11,22 +12,13 @@ const CarouselSeller = () => {
       arrows
       infinite
       swipeToSlide
+      responsive={responsiveItem}
     >
-      <div className="flex justify-center">
-        <CourseCard />
-      </div>
-      <div className="flex justify-center">
-        <CourseCard />
-      </div>
-      <div className="flex justify-center">
-        <CourseCard />
-      </div>
-      <div className="flex justify-center">
-        <CourseCard />
-      </div>
-      <div className="flex justify-center">
-        <CourseCard />
-      </div>
+      <CourseCard />
+      <CourseCard />
+      <CourseCard />
+      <CourseCard />
+      <CourseCard />
     </Carousel>
   );
 };

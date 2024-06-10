@@ -1,6 +1,7 @@
-import { Carousel } from 'antd';
-import '../styles/customCarousel.css';
-import StudentReview from './StudentReview';
+import { Carousel } from "antd";
+import "../styles/customCarousel.css";
+import StudentReview from "./StudentReview";
+import { responsiveItem } from "../utils/Responsive.carouselitem";
 
 const CarouselReview: React.FC = () => {
   return (
@@ -12,22 +13,13 @@ const CarouselReview: React.FC = () => {
       arrows
       infinite
       swipeToSlide
+      responsive={responsiveItem}
     >
-      <div className="flex justify-center">
-        <StudentReview />
-      </div>
-      <div className="flex justify-center">
-        <StudentReview />
-      </div>
-      <div className="flex justify-center">
-        <StudentReview />
-      </div>
-      <div className="flex justify-center">
-        <StudentReview />
-      </div>
-      <div className="flex justify-center">
-        <StudentReview />
-      </div>
+      <StudentReview />
+      <StudentReview />
+      <StudentReview />
+      <StudentReview />
+      <StudentReview />
     </Carousel>
   );
 };

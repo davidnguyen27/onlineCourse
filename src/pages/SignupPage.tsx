@@ -1,8 +1,8 @@
-import FormSignUp from '../components/FormSignUp';
+import FormSignUp from "../components/FormSignUp";
 
 const SignupPage = () => {
   return (
-    <div className="h-screen flex justify-center items-center">
+    <div className="flex h-screen items-center justify-center">
       <FormSignUp />
     </div>
   );
