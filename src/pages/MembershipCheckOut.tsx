@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import { Breadcrumb, Layout } from "antd";
 import { useNavigate } from "react-router-dom";
 import "../styles/index.css";
-import { AppFooter, AppHeader2 } from "../components";
-import DetailCheckOut from "../components/membershipCheckout/DetailCheckOut";
-import TotalOrder from "../components/membershipCheckout/TotalOrder";
-import PaymentMembership from "../components/membershipCheckout/PaymentMembership";
+import { AppFooter, AppHeader2, DetailCheckOut, PaymentMembership, TotalOrder } from "../components";
 const { Content, Footer } = Layout;
 
 const MembershipCheckOut: React.FC = () => {
