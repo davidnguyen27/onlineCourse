@@ -78,7 +78,7 @@ const Cart: React.FC = () => {
 
       <Content>
         <div className="min-h-screen bg-gray-100 flex flex-col">
-          <div className="bg-white">
+          <div className="bg-white" style={{ padding: "8px 0" }}>
             <Breadcrumb style={{ margin: "16px 0", padding: "0 140px" }}>
               <Breadcrumb.Item>
                 <span
@@ -103,7 +103,7 @@ const Cart: React.FC = () => {
           </div>
           <div className="flex-grow">
             <div className="max-w-7xl mx-auto p-4">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
                 <div className="md:col-span-2 bg-white rounded-lg shadow-md p-4">
                   {cartItems.map((item) => (
                     <CartItem
