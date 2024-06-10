@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-import CheckOutDetail from "../components/CheckOutDetail";
 import { Breadcrumb, Layout } from "antd";
 import { useNavigate } from "react-router-dom";
 import "../styles/index.css";
-import AppHeader2 from "../components/AppHeader2";
-import AppFooter from "../components/AppFooter";
-import OrderSummary from "../components/OrderSummary";
-import SelectPayment from "../components/SelectPayment";
+import { AppFooter, AppHeader2, CheckOutDetail, OrderSummary, SelectPayment } from "../components";
 const { Content, Footer } = Layout;
 
 const CheckOut: React.FC = () => {
-  const [nightMode, setNightMode] = useState(false);
+  const [nightMode] = useState(false);
   const navigate = useNavigate();
 
   return (

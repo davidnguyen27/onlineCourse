@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import "../../styles/index.css";
 import PaymentButton from "./PaymentButton";
-import PaymentForm from "./PaymentForm";
 import OrderSummary from "./OrderSummary";
-import "../styles/index.css";
+import PaymentForm from "../form/PaymentForm";
 
 interface OrderSummaryProps {
   total: number;

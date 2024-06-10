@@ -1,4 +1,4 @@
-import { useSider } from '../app/context/SiderProvider';
+import { useSider } from '../../app/context/SiderProvider';
 import { useNavigate } from 'react-router-dom';
 
 const AppHeader: React.FC = () => {

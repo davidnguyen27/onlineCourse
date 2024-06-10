@@ -1,14 +1,14 @@
 import { Carousel } from "antd";
-import CourseCard from "./CourseCard";
-import { responsiveItem } from "../utils/Responsive.carouselitem";
+import CourseCard from "../CourseCard";
+import { responsiveItem } from "../../utils/Responsive.carouselitem";
 
-const CarouselSeller = () => {
+const CarouselCourse = () => {
   return (
     <Carousel
       className="custom-carousel"
       dots={false}
-      slidesToShow={4}
       slidesToScroll={1}
+      slidesToShow={4}
       arrows
       infinite
       swipeToSlide
@@ -23,4 +23,4 @@ const CarouselSeller = () => {
   );
 };
 
-export default CarouselSeller;
+export default CarouselCourse;

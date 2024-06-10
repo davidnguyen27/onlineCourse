@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { Breadcrumb, Layout } from "antd";
 import { useNavigate } from "react-router-dom";
-import CartItem from "../components/CartItem";
-import CartSummary from "../components/CartSummary";
 import "../styles/index.css";
-import AppHeader2 from "../components/AppHeader2";
-import AppFooter from "../components/AppFooter";
+import { AppFooter, AppHeader2, CartItem, CartSummary } from "../components";
 
 const { Content, Footer } = Layout;
 
@@ -58,11 +55,14 @@ const initialCartItems = [
 
 const Cart: React.FC = () => {
   const [cartItems, setCartItems] = useState(initialCartItems);
-  const [nightMode, setNightMode] = useState(false);
+  const [nightMode] = useState(false);
+  // let nightMode2 = false;
+  // const nightmode3 = useRef(false);
   const navigate = useNavigate();
 
   const handleRemove = (id: number) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+    // nightmode3.current = true;
   };
 
   const originalPrice = cartItems.reduce(
