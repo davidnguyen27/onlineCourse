@@ -1,10 +1,5 @@
 import React from 'react';
-
-interface HelpCardProps {
-  iconClass: string;
-  title: string;
-  description: string;
-}
+import { HelpCardProps } from '../models/Types';
 
 const HelpCard: React.FC<HelpCardProps> = ({ iconClass, title, description }) => {
   return (
@@ -13,9 +8,7 @@ const HelpCard: React.FC<HelpCardProps> = ({ iconClass, title, description }) =>
         <div className="justify-items-center">
           <i className={iconClass}></i>
         </div>
-        <h1 className="font-semibold">
-          {title}
-        </h1>
+        <h1 className="font-semibold">{title}</h1>
         <div className="my-2">
           <span className="font-light text-xs">{description}</span>
         </div>
