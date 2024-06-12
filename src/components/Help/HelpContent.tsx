@@ -1,14 +1,13 @@
-import { useState } from 'react';
-import HelpBox from './HelpBox';
-import HelpSubTab from './HelpSubTab';
+import { useState } from "react";
+import { HelpBox, HelpSubTab } from "../../components";
 
 const HelpContent = () => {
-  const [activeTab, setActiveTab] = useState('instructor');
+  const [activeTab, setActiveTab] = useState("instructor");
   return (
     <div>
       <HelpBox
         helpData={{
-          title: 'How may we help you?',
+          title: "How may we help you?",
         }}
       />
       <HelpSubTab activeTab={activeTab} setActiveTab={setActiveTab} />

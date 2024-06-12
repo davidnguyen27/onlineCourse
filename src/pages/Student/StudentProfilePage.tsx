@@ -1,11 +1,11 @@
 import { Layout } from 'antd';
 import Sider from 'antd/es/layout/Sider';
 import { Content, Footer, Header } from 'antd/es/layout/layout';
-import StudentHeader from '../components/Student/StudentHeader';
-import AppFooter from '../components/AppFooter';
-import AppSider from '../components/AppSider';
-import { useSider } from '../app/context/SiderProvider';
-import StudentProfileContent from '../components/Student/StudentProfileContent';
+import StudentHeader from '../../components/Student/StudentHeader';
+import AppFooter from '../../components/Layout/AppFooter';
+import AppSider from '../../components/Layout/AppSider';
+import { useSider } from '../../app/context/SiderProvider';
+import StudentProfileContent from '../../components/Student/StudentProfileContent';
 
 
 const StudentProfilePage: React.FC = () => {

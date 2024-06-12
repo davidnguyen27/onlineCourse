@@ -1,9 +1,9 @@
-import AppRoutes from './routes/AppRouter'; // Assuming both files are in the same directory
+import AppRouter from "./routes/AppRouter";
 
 const App = () => {
   return (
     <>
-      <AppRoutes />
+      <AppRouter />
     </>
   );
 };

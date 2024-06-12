@@ -1,14 +1,16 @@
-import { CourseHelpProps } from '../models/Types';
+import { CourseHelpProps } from "../../models/Types";
 
 const HelpBox: React.FC<CourseHelpProps> = ({ helpData }) => {
   return (
-    <div className="text-black p-5">
-      <div className="bg-gray-800  p-12 flex justify-center items-center -mt-5 -ml-5 -mr-3">
-        <div className=" flex flex-col items-center">
-          <h2 className="text-2xl font-bold text-white rounded">{helpData.title}</h2>
+    <div className="p-5 text-black">
+      <div className="-ml-5 -mr-3 -mt-5 flex items-center justify-center bg-gray-800 p-12">
+        <div className="flex flex-col items-center">
+          <h2 className="rounded text-2xl font-bold text-white">
+            {helpData.title}
+          </h2>
           <div className="styles-x-axis search-box">
             <input
-              style={{ width: '85%' }}
+              style={{ width: "85%" }}
               type="text"
               placeholder="Search for solutions"
               className="search-item mt-5"

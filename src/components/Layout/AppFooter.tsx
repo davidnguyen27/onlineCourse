@@ -59,7 +59,10 @@ const AppFooter: React.FC = () => {
             src="https://webmedia.com.vn/images/2021/09/logo-da-thong-bao-bo-cong-thuong-mau-xanh.png"
             alt=""
           />
-          <span className="text-xs text-white">Copyright @ 2024 FPT LearningHub</span>
+
+          <span className="text-xs text-white">
+            Copyright @ 2024 FPT LearningHub
+          </span>
         </div>
       </div>
     </>

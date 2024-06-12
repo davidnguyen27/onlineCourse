@@ -1,11 +1,11 @@
 import { Layout } from 'antd';
 import { Content, Footer, Header } from 'antd/es/layout/layout';
-import AppHeader from '../components/AppHeader';
+import AppHeader from '../components/Layout/AppHeader';
 import Sider from 'antd/es/layout/Sider';
 import AppSider from '../components/AppSider';
-import AppFooter from '../components/AppFooter';
+import AppFooter from '../components/Layout/AppFooter';
 import { useSider } from '../app/context/SiderProvider';
-import DetailCourseContent from '../components/DetailCourseContent';
+import DetailCourseContent from '../components/User/DetailCourseContent';
 
 const DetailCoursePage: React.FC = () => {
   const { collapsed } = useSider();

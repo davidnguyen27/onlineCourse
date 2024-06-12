@@ -1,7 +1,10 @@
-import { useSider } from '../app/context/SiderProvider';
+import { useNavigate } from "react-router-dom";
+import { useSider } from "../../app/context/SiderProvider";
 
 const AppHeader: React.FC = () => {
   const { toggleSider } = useSider();
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -18,7 +21,7 @@ const AppHeader: React.FC = () => {
           </div>
           <div className="styles-x-axis search-box">
             <input
-              style={{ width: '100%' }}
+              style={{ width: "100%" }}
               type="text"
               placeholder="Search for courses, tutorials..."
               className="search-item"
@@ -27,12 +30,16 @@ const AppHeader: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="styles-x-axis justify-end w-1/2">
+      <div className="styles-x-axis w-1/2 justify-end">
         <div className="cart-styles">
           <i className="fa-solid fa-cart-shopping"></i>
         </div>
-        <button className="sign-in-button">Sign in</button>
-        <button className="sign-up-button">Sign up</button>
+        <button className="sign-in-button" onClick={() => navigate("/sign-in")}>
+          Sign in
+        </button>
+        <button className="sign-up-button" onClick={() => navigate("/sign-up")}>
+          Sign up
+        </button>
       </div>
     </>
   );
