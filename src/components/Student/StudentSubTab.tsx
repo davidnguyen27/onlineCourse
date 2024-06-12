@@ -1,7 +1,13 @@
 import React from 'react';
-import { CourseSubTabProps } from '../models/Types';
+import StudentCarousel from './StudentCarousel'
 
-const CourseSubTab: React.FC<CourseSubTabProps> = ({ activeTab, setActiveTab, courseData }) => {
+interface StudentProfileSubTabProps {
+  activeTab: string;
+  setActiveTab: (tab: string) => void;
+  
+}
+
+const StudentProfileSubTab: React.FC<StudentProfileSubTabProps> = ({ activeTab, setActiveTab }) => {
   const AboutTabContent = () => (
     <div>
       <h3 className="font-semibold rounded">Requirements</h3>
@@ -86,20 +92,18 @@ const CourseSubTab: React.FC<CourseSubTabProps> = ({ activeTab, setActiveTab, co
     </div>
   );
 
-  const CourseContentTabContent = () => (
-    <div>
-      <h3>Course Content</h3>
-      <ul className="list-disc ml-4 text-gray-700 rounded">
-        {courseData.content.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
+  const MyCourseTabContent = () => (
+    <div className='p-4'>
+      <h3 className='font-semibold'>Select a topic to search for help</h3>
+      <div className=" justify-items-center">
+        <StudentCarousel />
+      </div>
     </div>
   );
 
   return (
     <div className="mt-5">
-      <div className="flex justify-center font-semibold border-b-2 border-gray-200">
+      <div className="flex justify-self-end font-semibold border-b-2 border-gray-200">
         <button
           type="button"
           className={`py-2 px-4 ${activeTab === 'about' ? 'bg-gray-200' : ''}`}
@@ -109,25 +113,18 @@ const CourseSubTab: React.FC<CourseSubTabProps> = ({ activeTab, setActiveTab, co
         </button>
         <button
           type="button"
-          className={`py-2 px-4 ${activeTab === 'content' ? 'bg-gray-200' : ''}`}
-          onClick={() => setActiveTab('content')}
+          className={`py-2 px-4 ${activeTab === 'my course' ? 'bg-gray-200' : ''}`}
+          onClick={() => setActiveTab('my course')}
         >
-          Course Content
-        </button>
-        <button
-          type="button"
-          className={`py-2 px-4 ${activeTab === 'reviews' ? 'bg-gray-200' : ''}`}
-          onClick={() => setActiveTab('reviews')}
-        >
-          Reviews
+          My Course
         </button>
       </div>
       <div>
         {activeTab === 'about' && <AboutTabContent />}
-        {activeTab === 'content' && <CourseContentTabContent />}
+        {activeTab === 'my course' && <MyCourseTabContent />}
       </div>
     </div>
   );
 };
 
-export default CourseSubTab;
+export default StudentProfileSubTab;
