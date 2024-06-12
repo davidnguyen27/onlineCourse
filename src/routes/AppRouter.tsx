@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-import Cart from "../pages/User/Cart";
-import CheckOut from "../pages/User/CheckOut";
+import Cart from "../pages/user/Cart";
+import CheckOut from "../pages/user/CheckOut";
 import HomePage from "../pages/HomePage";
 import SigninPage from "../pages/SigninPage";
 import SignupPage from "../pages/SignupPage";
-import PaidMembershipPage from "../pages/User/PaidMembership";
-import MembershipCheckOut from "../pages/User/MembershipCheckOut";
+import PaidMembershipPage from "../pages/user/PaidMembership";
+import MembershipCheckOut from "../pages/user/MembershipCheckOut";
 
 const AppRouter = () => {
   return (
