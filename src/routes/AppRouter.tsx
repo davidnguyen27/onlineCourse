@@ -2,8 +2,8 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import Cart from "../pages/user/Cart";
 import CheckOut from "../pages/user/CheckOut";
 import HomePage from "../pages/HomePage";
-import SignInPage from "../pages/SignInPage";
-import SignUpPage from "../pages/SignUpPage";
+import SignInPage from "../pages/SigninPage";
+import SignUpPage from "../pages/SignupPage";
 import PaidMembershipPage from "../pages/user/PaidMembership";
 import MembershipCheckOut from "../pages/user/MembershipCheckOut";
 
