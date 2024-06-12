@@ -1,6 +1,6 @@
-import FormSignUp from "../components/FormSignUp";
+import FormSignUp from "../../components/Form/FormSignUp";
 
-const SignupPage = () => {
+const SignUpPage = () => {
   return (
     <div className="flex h-screen items-center justify-center">
       <FormSignUp />
@@ -8,4 +8,4 @@ const SignupPage = () => {
   );
 };
 
-export default SignupPage;
+export default SignUpPage;

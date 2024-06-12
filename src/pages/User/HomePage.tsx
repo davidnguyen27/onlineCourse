@@ -1,15 +1,17 @@
 import { Layout } from "antd";
 import Sider from "antd/es/layout/Sider";
 import { Content, Footer, Header } from "antd/es/layout/layout";
-import AppHeader from "../components/AppHeader";
-import AppFooter from "../components/AppFooter";
-import AppSider from "../components/AppSider";
-import { useSider } from "../app/context/SiderProvider";
-import Achievements from "../components/Achievements";
-import CarouselInstructor from "../components/Carousel.instructor";
-import CarouselReview from "../components/Carousel.review";
-import CarouselCourse from "../components/Carousel.courses";
-import CarouselSeller from "../components/Carousel.seller";
+import { useSider } from "../../app/context/SiderProvider";
+import Achievements from "../../components/User/Achievements";
+import {
+  AppFooter,
+  AppHeader,
+  AppSider,
+  CarouselCourse,
+  CarouselInstructor,
+  CarouselReview,
+  CarouselSeller,
+} from "../../components";
 
 const HomePage: React.FC = () => {
   const { collapsed } = useSider();
