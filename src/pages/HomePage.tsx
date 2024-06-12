@@ -6,10 +6,10 @@ import AppFooter from "../components/AppFooter";
 import AppSider from "../components/AppSider";
 import { useSider } from "../app/context/SiderProvider";
 import Achievements from "../components/Achievements";
-import CarouselInstructor from "../components/carousel/Carousel.instructor";
-import CarouselReview from "../components/carousel/Carousel.review";
-import CarouselCourse from "../components/carousel/Carousel.courses";
-import CarouselSeller from "../components/carousel/Carousel.seller";
+import CarouselInstructor from "../components/Carousel.instructor";
+import CarouselReview from "../components/Carousel.review";
+import CarouselCourse from "../components/Carousel.courses";
+import CarouselSeller from "../components/Carousel.seller";
 
 const HomePage: React.FC = () => {
   const { collapsed } = useSider();

@@ -1,7 +1,7 @@
 import { Carousel } from "antd";
 
-import StudentReview from "../StudentReview";
-import { responsiveItem } from "../../utils/Responsive.carouselitem";
+import StudentReview from "./StudentReview";
+import { responsiveItem } from "../utils/Responsive.carouselitem";
 
 const CarouselReview: React.FC = () => {
   return (
