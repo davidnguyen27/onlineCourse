@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Breadcrumb, Layout } from "antd";
 import { useNavigate } from "react-router-dom";
-import "../styles/index.css";
-import { AppFooter, AppHeader2, CartItem, CartSummary } from "../components";
+import "../../styles/index.css";
+import { AppFooter, AppHeader2, CartItem, CartSummary } from "../../components";
 
 const { Content, Footer } = Layout;
 

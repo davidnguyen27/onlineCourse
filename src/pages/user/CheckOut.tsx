@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Breadcrumb, Layout } from "antd";
 import { useNavigate } from "react-router-dom";
-import "../styles/index.css";
-import { AppFooter, AppHeader2, CheckOutDetail, OrderSummary, SelectPayment } from "../components";
+import "../../styles/index.css";
+import { AppFooter, AppHeader2, CheckOutDetail, OrderSummary, SelectPayment } from "../../components";
 const { Content, Footer } = Layout;
 
 const CheckOut: React.FC = () => {

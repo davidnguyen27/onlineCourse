@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout, Breadcrumb } from "antd";
 import { useNavigate } from "react-router-dom";
-import { AppFooter, AppHeader2, MembershipFaq, SelectMembership, SelectMembership2 } from "../components";
+import { AppFooter, AppHeader2, MembershipFaq, SelectMembership, SelectMembership2 } from "../../components";
 
 const { Content, Footer } = Layout;
 
