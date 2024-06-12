@@ -1,7 +1,5 @@
 import { LockOutlined } from "@ant-design/icons";
 import React from "react";
-import { useNavigate } from "react-router-dom";
-
 interface OrderSummaryProps {
   total: number;
   originalPrice: number;
@@ -13,7 +11,6 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
   originalPrice,
   discountPrice,
 }) => {
-  const navigate = useNavigate();
   return (
     <div className="p-4">
       <div className="relative mb-4">
