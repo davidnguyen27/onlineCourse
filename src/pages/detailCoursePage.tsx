@@ -34,3 +34,4 @@ const DetailCoursePage: React.FC = () => {
 };
 
 export default DetailCoursePage;
+

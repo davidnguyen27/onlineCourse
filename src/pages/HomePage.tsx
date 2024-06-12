@@ -19,9 +19,7 @@ const HomePage: React.FC = () => {
           <AppSider className={`transition-all duration-75 ${collapsed ? 'w-0' : 'w-64'}`} />
         </Sider>
         <Layout className="flex flex-col flex-1">
-          <Content className="flex-1 overflow-y-auto">
- 
-          </Content>
+          <Content className="flex-1 overflow-y-auto"></Content>
           <Footer className="footer">
             <AppFooter />
           </Footer>
