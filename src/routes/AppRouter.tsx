@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Cart from "../pages/user/Cart";
 import CheckOut from "../pages/user/CheckOut";
 import HomePage from "../pages/HomePage";
@@ -27,7 +27,6 @@ const withRoleProtection = ({
 
 const AppRouter = () => {
   return (
-    <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="sign-in" element={<SignInPage />} />
@@ -61,7 +60,6 @@ const AppRouter = () => {
           })}
         />
       </Routes>
-    </BrowserRouter>
   );
 };
 
