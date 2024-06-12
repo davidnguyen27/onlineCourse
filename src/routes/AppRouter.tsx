@@ -6,6 +6,8 @@ import PaidMembershipPage from "../pages/user/PaidMembership";
 import MembershipCheckOut from "../pages/user/MembershipCheckOut";
 import SignInPage from "../pages/SigninPage";
 import SignUpPage from "../pages/SignupPage";
+import StudentPage from "../pages/user/StudentPage";
+import InstructorPage from "../pages/instructor/InstructorPage";
 
 interface ProtectedRouteProps {
   component: React.ComponentType<any>;
@@ -27,39 +29,53 @@ const withRoleProtection = ({
 
 const AppRouter = () => {
   return (
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="sign-in" element={<SignInPage />} />
-        <Route path="sign-up" element={<SignUpPage />} />
-        <Route
-          path="/cart"
-          element={withRoleProtection({
-            component: Cart,
-            allowedRoles: ["student"],
-          })}
-        />
-        <Route
-          path="/checkout"
-          element={withRoleProtection({
-            component: CheckOut,
-            allowedRoles: ["student"],
-          })}
-        />
-        <Route
-          path="/paid-membership"
-          element={withRoleProtection({
-            component: PaidMembershipPage,
-            allowedRoles: ["student"],
-          })}
-        />
-        <Route
-          path="/membership-Checkout"
-          element={withRoleProtection({
-            component: MembershipCheckOut,
-            allowedRoles: ["student"],
-          })}
-        />
-      </Routes>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="sign-in" element={<SignInPage />} />
+      <Route path="sign-up" element={<SignUpPage />} />
+      <Route
+        path="/student-page"
+        element={withRoleProtection({
+          component: StudentPage,
+          allowedRoles: ["student"],
+        })}
+      />
+      <Route
+        path="/cart"
+        element={withRoleProtection({
+          component: Cart,
+          allowedRoles: ["student"],
+        })}
+      />
+      <Route
+        path="/checkout"
+        element={withRoleProtection({
+          component: CheckOut,
+          allowedRoles: ["student"],
+        })}
+      />
+      <Route
+        path="/paid-membership"
+        element={withRoleProtection({
+          component: PaidMembershipPage,
+          allowedRoles: ["student"],
+        })}
+      />
+      <Route
+        path="/membership-Checkout"
+        element={withRoleProtection({
+          component: MembershipCheckOut,
+          allowedRoles: ["student"],
+        })}
+      />
+      <Route
+        path="/instructor-page"
+        element={withRoleProtection({
+          component: InstructorPage,
+          allowedRoles: ["instructor"],
+        })}
+      />
+    </Routes>
   );
 };
 

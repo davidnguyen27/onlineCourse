@@ -6,7 +6,7 @@ import { AppHeader, AppFooter } from '../../components';
 import SiderInstructor from '../../components/instructor/SiderInstructor';
 import Overview from '../../components/instructor/Overview';
 
-const Dashboard = () => {
+const InstructorPage: React.FC = () => {
     const { collapsed } = useSider();
 
   return (
@@ -30,7 +30,7 @@ const Dashboard = () => {
           <Content className="flex-1 overflow-y-auto">
             <div className="p-8">
               <section>
-                <h1 className="text-xl font-bold">Admin Dashboard</h1>
+                <h1 className="text-xl font-bold">Instructor Dashboard</h1>
                 <Overview />
               </section>
             </div>
@@ -44,4 +44,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard;
+export default InstructorPage;

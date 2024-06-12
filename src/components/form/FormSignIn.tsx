@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 interface User {
   email: string;
   password: string;
-  role: string;
+  role: string; // Sửa lại để khớp với kiểu dữ liệu thực tế
 }
 
 const FormSignIn = () => {
@@ -22,12 +22,14 @@ const FormSignIn = () => {
       const users = res.data;
 
       const user = users.find(
-        (user: { email: string; password: string; }) => user.email === email && user.password === password,
+        (user: User) => user.email === email && user.password === password,
       );
+
       if (user) {
         console.log("Login success");
         if (typeof user.role === "string") {
           sessionStorage.setItem("userRole", user.role);
+
           switch (user.role.toLowerCase()) {
             case "student":
               navigate("/student-page");
@@ -40,6 +42,7 @@ const FormSignIn = () => {
               break;
             default:
               console.log("Unknown role");
+              navigate("/");
           }
         } else {
           console.log("Role type is not string");
