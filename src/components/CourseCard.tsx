@@ -1,26 +1,38 @@
 import React from 'react';
 
-interface CourseCardProps {
-  title: string;
-  description: string;
-  views: string;
-  date: string;
-  price: string;
-  rating: number;
-  image: string;
-}
-
-const CourseCard: React.FC<CourseCardProps> = ({ title, description, views, date, price, rating, image }) => {
+const CourseCard: React.FC = () => {
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md">
-      <img src={image} alt={title} className="w-full h-40 object-cover rounded-lg mb-4" />
-      <h3 className="text-lg font-bold">{title}</h3>
-      <p className="text-gray-600">{description}</p>
-      <p className="text-gray-600">{views}</p>
-      <p className="text-gray-600">{date}</p>
-      <p className="text-green-500">{price}</p>
-      <p className="text-yellow-500">Rating: {rating}</p>
-    </div>
+    <article className="h-auto w-auto cursor-pointer rounded-md bg-slate-200">
+      <div className="p-4">
+        <div>
+          <img
+            src="https://miro.medium.com/v2/resize:fit:700/1*9ldWBjIm_36mNyNvJNCJgA.png"
+            alt="Javascript"
+          />
+        </div>
+        <div className="my-3 flex justify-between">
+          <div>
+            <span>1M Students</span>
+          </div>
+          <div>
+            <i className="fa-solid fa-ellipsis-vertical cursor-pointer hover:text-amber-500"></i>
+          </div>
+        </div>
+        <h3 className="font-semibold">
+          The Complete Course Javascript Course 2024: From Zero to Expert!
+        </h3>
+        <div className="my-2">
+          <span className="text-xs font-light">Web development</span>
+        </div>
+        <div className="flex items-center justify-between">
+          <p className="text-xs">
+            By <span className="font-medium">Jonas Schmedtmann</span>
+          </p>
+          <i className="fa-solid fa-cart-plus ml-14 cursor-pointer"></i>
+          <span>$20</span>
+        </div>
+      </div>
+    </article>
   );
 };
 

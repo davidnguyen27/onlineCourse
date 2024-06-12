@@ -1,4 +1,6 @@
-import { ReactNode } from 'react';
+
+import { ReactNode } from "react";
+
 
 export type SiderContextType = {
   collapsed: boolean;
@@ -7,4 +9,6 @@ export type SiderContextType = {
 
 export type SiderProviderProps = {
   children: ReactNode;
+
 };
+

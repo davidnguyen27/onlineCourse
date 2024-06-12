@@ -1,14 +1,16 @@
-// AppRouter.tsx
-import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import SearchPage from '../pages/SearchPage';
 
-const AppRouter: React.FC = () => {
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "../pages/HomePage";
+import SigninPage from "../pages/SigninPage";
+import SignupPage from "../pages/SignupPage";
+
+const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SearchPage />} />
-        {/* <Route path="/about" element={<AboutPage />} /> */}
+        <Route path="/" element={<HomePage />} />
+        <Route path="sign-in" element={<SigninPage />} />
+        <Route path="sign-up" element={<SignupPage />} />
       </Routes>
     </BrowserRouter>
   );
