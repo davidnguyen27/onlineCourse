@@ -1,6 +1,6 @@
 import { FormSignIn } from "../components";
 
-const SigninPage = () => {
+const SignInPage = () => {
   return (
     <div className="flex h-screen items-center justify-center">
       <FormSignIn />
@@ -8,4 +8,4 @@ const SigninPage = () => {
   );
 };
 
-export default SigninPage;
+export default SignInPage;

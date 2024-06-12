@@ -1,6 +1,6 @@
 import { FormSignUp } from "../components";
 
-const SignupPage = () => {
+const SignUpPage = () => {
   return (
     <div className="flex h-screen items-center justify-center">
       <FormSignUp />
@@ -8,4 +8,4 @@ const SignupPage = () => {
   );
 };
 
-export default SignupPage;
+export default SignUpPage;
