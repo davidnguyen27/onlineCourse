@@ -2,81 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer pages {
-  .container {
-    width: 100%;
-    height: 120%;
-    background-color: #f0f2f5;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin: auto;
-  }
-
-  .form-container {
-    margin-top: 15px;
-    max-width: 400px;
-    width: 100%;
-    margin: auto;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    background-color: #fff;
-    transition: box-shadow 0.3s ease-in-out;
-    margin-top: 30px;
-    margin-bottom: 10px;
-  }
-
-  .form-container-2 {
-    margin-top: 15px;
-    max-width: 800px;
-    width: 100%;
-    margin: auto;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    background-color: #fff;
-    transition: box-shadow 0.3s ease-in-out;
-    margin-top: 10px;
-  }
-
-  .form-wrapper {
-    max-width: 300px;
-    width: 100%;
-    margin: auto;
-  }
-
-  .input-item {
-    margin-bottom: 15px;
-  }
-
-  .login-form-forgot {
-    float: right;
-  }
-
-  .login-form-button {
-    width: 100%;
-  }
-
-  .Login {
-    font-size: 40px;
-    margin-left: 120px;
-    font-family: "Courier New", Courier, monospace;
-    font-weight: 1000;
-  }
-
-  .Register {
-    font-size: 40px;
-    margin-left: 300px;
-    font-family: "Courier New", Courier, monospace;
-    font-weight: 1000;
-  }
+html,
+body {
+  height: 100%;
 }
 
-@media screen and (max-width: 768px) {
-  .form-wrapper {
-    max-width: 100%;
-  }
+.layout {
+  height: 100%;
 }
 
 @layer components {
@@ -85,7 +17,7 @@
   }
 
   .header {
-    @apply w-full flex justify-between bg-slate-200 p-0 drop-shadow-xl;
+    @apply w-full flex justify-between bg-slate-200 p-0;
   }
 
   .wrapper-50 {
@@ -93,7 +25,7 @@
   }
 
   .menu-bar {
-    @apply flex items-center justify-center bg-amber-600 text-2xl h-16 cursor-pointer mr-4 w-16 hover:bg-amber-700;
+    @apply flex items-center justify-center bg-amber-500 text-2xl h-16 cursor-pointer mr-4 w-16 hover:bg-amber-600;
   }
 
   .logo-box {
@@ -117,7 +49,7 @@
   }
 
   .sign-in-button {
-    @apply rounded-xl border-amber-600 bg-amber-600 h-12 w-24 leading-10 hover:bg-amber-700;
+    @apply rounded-xl bg-amber-500 h-12 w-24 leading-10 hover:bg-amber-600;
   }
 
   .sign-up-button {
@@ -125,23 +57,15 @@
   }
 
   .sider {
-    @apply h-full bg-amber-600 !important;
+    @apply h-full bg-slate-200 !important;
     @apply transition-transform duration-75;
   }
 
   .sider-item {
-    @apply p-3 hover:bg-zinc-200;
-  }
-
-  .sider-text {
-    @apply ml-2 text-stone-800 text-base;
-  }
-
-  .active {
-    @apply bg-zinc-200;
+    @apply p-3 hover:bg-amber-500;
   }
 
   .footer {
-    @apply w-full bg-slate-200;
+    @apply w-full bg-stone-800;
   }
 }
