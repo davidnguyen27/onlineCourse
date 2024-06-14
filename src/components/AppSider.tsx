@@ -44,6 +44,14 @@ const AppSider: React.FC<{ className?: string }> = () => {
         <Menu.Item
           className="hover:rounded-none hover:bg-amber-500 hover:text-black"
           key="3"
+          icon={<i className="fa-solid fa-Book"></i>}
+          onClick={() => navigate('/course')}
+        >
+          Course
+        </Menu.Item>
+        <Menu.Item
+          className="hover:rounded-none hover:bg-amber-500 hover:text-black"
+          key="4"
           icon={<i className="fa-solid fa-address-card"></i>}
           onClick={() => navigate('/about')}
         >
@@ -51,7 +59,7 @@ const AppSider: React.FC<{ className?: string }> = () => {
         </Menu.Item>
         <Menu.Item
           className="hover:rounded-none hover:bg-amber-500 hover:text-black"
-          key="4"
+          key="5"
           icon={<i className="fa fa-snowflake-o"></i>}
           onClick={() => navigate('/careers')}
         >

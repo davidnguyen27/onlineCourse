@@ -5,6 +5,7 @@ import SigninPage from '../pages/SigninPage';
 import SignupPage from '../pages/SignupPage';
 import AboutPage from '../pages/AboutPage';
 import SearchContent from '../components/SearchContent';
+import CoursePage from '../pages/CoursePage';
 
 const AppRouter: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const AppRouter: React.FC = () => {
         <Route path="sign-up" element={<SignupPage />} />
         <Route path="/search" element={<SearchContent />} />
         <Route path="about" element={<AboutPage />} />
+        <Route path="course" element={<CoursePage />} />
 
       </Routes>
     </BrowserRouter>
