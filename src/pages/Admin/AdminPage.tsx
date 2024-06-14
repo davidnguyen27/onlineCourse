@@ -2,10 +2,11 @@ import { Layout } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import AppHeader from "../../components/Layout/AppHeader";
 import Sider from "antd/es/layout/Sider";
-import { useSider } from "../../app/context/SiderProvider";
+import { useSider } from "../../app/context/SiderContext";
 import AppFooter from "../../components/Layout/AppFooter";
 import SiderAdmin from "../../components/Admin/SiderAdmin";
 import Overview from "../../components/Admin/Overview";
+import Chart from "../../components/Admin/Chart";
 
 const AdminPage = () => {
   const { collapsed } = useSider();
@@ -33,6 +34,7 @@ const AdminPage = () => {
               <section>
                 <h1 className="text-xl font-bold">Admin Dashboard</h1>
                 <Overview />
+                <Chart />
               </section>
             </div>
             <Footer className="footer">

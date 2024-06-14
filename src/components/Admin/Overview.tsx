@@ -5,10 +5,7 @@ const Overview: React.FC = () => {
         <div className="flex items-center justify-between p-4">
           <div>
             <h2 className="text-xl font-semibold">Total Sales</h2>
-            <h2 className="my-4 text-xl font-semibold">$350</h2>
-            <button className="rounded-md bg-amber-500 px-3 py-1 text-white">
-              New $50
-            </button>
+            <h2 className="my-4 text-xl font-semibold">0</h2>
           </div>
           <div>
             <i className="fa-solid fa-trophy text-4xl"></i>
@@ -18,42 +15,33 @@ const Overview: React.FC = () => {
       <div className="bg-slate-200">
         <div className="flex items-center justify-between p-4">
           <div>
-            <h2 className="text-xl font-semibold">Total Sales</h2>
-            <h2 className="my-4 text-xl font-semibold">$350</h2>
-            <button className="rounded-md bg-amber-500 px-3 py-1 text-white">
-              New $50
-            </button>
+            <h2 className="text-xl font-semibold">Total Instructors</h2>
+            <h2 className="my-4 text-xl font-semibold">0</h2>
           </div>
           <div>
-            <i className="fa-solid fa-trophy text-4xl"></i>
+            <i className="fa-solid fa-chalkboard-user text-4xl"></i>
           </div>
         </div>
       </div>
       <div className="bg-slate-200">
         <div className="flex items-center justify-between p-4">
           <div>
-            <h2 className="text-xl font-semibold">Total Sales</h2>
-            <h2 className="my-4 text-xl font-semibold">$350</h2>
-            <button className="rounded-md bg-amber-500 px-3 py-1 text-white">
-              New $50
-            </button>
+            <h2 className="text-xl font-semibold">Total Students</h2>
+            <h2 className="my-4 text-xl font-semibold">0</h2>
           </div>
           <div>
-            <i className="fa-solid fa-trophy text-4xl"></i>
+            <i className="fa-solid fa-users text-4xl"></i>
           </div>
         </div>
       </div>
       <div className="bg-slate-200">
         <div className="flex items-center justify-between p-4">
           <div>
-            <h2 className="text-xl font-semibold">Total Sales</h2>
-            <h2 className="my-4 text-xl font-semibold">$350</h2>
-            <button className="rounded-md bg-amber-500 px-3 py-1 text-white">
-              New $50
-            </button>
+            <h2 className="text-xl font-semibold">Total Courses</h2>
+            <h2 className="my-4 text-xl font-semibold">0</h2>
           </div>
           <div>
-            <i className="fa-solid fa-trophy text-4xl"></i>
+            <i className="fa-solid fa-book-open text-4xl"></i>
           </div>
         </div>
       </div>

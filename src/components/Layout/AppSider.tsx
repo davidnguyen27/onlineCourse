@@ -83,7 +83,7 @@ const AppSider: React.FC<{ className?: string }> = () => {
           className="hover:rounded-none hover:bg-amber-500 hover:text-black"
           key="10"
           icon={<i className="fa-solid fa-circle-question"></i>}
-          onClick={() => navigate("/HelpPage")}
+          onClick={() => navigate("/help-page")}
         >
           Help
         </Menu.Item>

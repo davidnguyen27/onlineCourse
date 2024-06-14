@@ -4,7 +4,7 @@ import AppHeader from "../../components/Layout/AppHeader";
 import Sider from "antd/es/layout/Sider";
 import AppSider from "../../components/Layout/AppSider";
 import AppFooter from "../../components/Layout/AppFooter";
-import { useSider } from "../../app/context/SiderProvider";
+import { useSider } from "../../app/context/SiderContext";
 import DetailCourseContent from "../../components/User/DetailCourseContent";
 
 const DetailCoursePage: React.FC = () => {

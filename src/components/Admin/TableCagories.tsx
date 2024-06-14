@@ -110,10 +110,10 @@ const data: DataType[] = [
   },
 ];
 
-const TableUser = () => {
+const TableCategories = () => {
   return (
     <Table className="my-5 rounded-none" columns={columns} dataSource={data} />
   );
 };
 
-export default TableUser;
+export default TableCategories;

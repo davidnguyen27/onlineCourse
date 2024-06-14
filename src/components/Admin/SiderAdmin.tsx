@@ -16,30 +16,33 @@ const SiderAdmin: React.FC<{ className?: string }> = () => {
           className="hover:rounded-none hover:bg-amber-500 hover:text-black"
           key="1"
           icon={<i className="fa-solid fa-table-columns"></i>}
+          onClick={() => navigate("/admin-page")}
         >
           Dashboard
         </Menu.Item>
         <Menu.Item
           className="hover:rounded-none hover:bg-amber-500 hover:text-black"
           key="2"
-          icon={<i className="fa-solid fa-chart-line"></i>}
-        >
-          Analytics
-        </Menu.Item>
-        <Menu.Item
-          className="hover:rounded-none hover:bg-amber-500 hover:text-black"
-          key="3"
           icon={<i className="fa-solid fa-layer-group"></i>}
+          onClick={() => navigate("/categories-management")}
         >
           Categories
         </Menu.Item>
         <Menu.Item
           className="hover:rounded-none hover:bg-amber-500 hover:text-black"
-          key="4"
+          key="3"
           icon={<i className="fa-solid fa-user"></i>}
           onClick={() => navigate("/user-management")}
         >
           User
+        </Menu.Item>
+        <Menu.Item
+          className="hover:rounded-none hover:bg-amber-500 hover:text-black"
+          key="4"
+          icon={<i className="fa-solid fa-user-secret"></i>}
+          onClick={() => navigate("/instructor-management")}
+        >
+          Instructor
         </Menu.Item>
         <Menu.Item
           className="hover:rounded-none hover:bg-amber-500 hover:text-black"

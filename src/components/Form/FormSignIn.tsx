@@ -1,113 +1,90 @@
-import { Divider, Input, Radio } from "antd";
-import axios from "axios";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { Form, Input, Radio } from "antd";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-
-interface User {
-  email: string;
-  password: string;
-  role: String;
-}
+import { AuthContext } from "../../app/context/AuthContext";
 
 const FormSignIn = () => {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-
   const navigate = useNavigate();
 
-  const handleLogin = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
-    e.preventDefault();
-    try {
-      const res = await axios.get<User[]>("/data/fakeUser.json");
-      const users = res.data;
+  const authContext = useContext(AuthContext);
 
-      const user = users.find(
-        (user) => user.email === email && user.password === password,
-      );
+  if (!authContext) {
+    throw new Error("AuthContext must be used within an AuthProvider");
+  }
+
+  const { login } = authContext;
+
+  const handleLogin = async (values: { email: string; password: string }) => {
+    try {
+      await login(values.email, values.password);
+      const storedUser = sessionStorage.getItem("user");
+      const user = storedUser ? JSON.parse(storedUser) : null;
       if (user) {
-        console.log("Login success");
-        if (typeof user.role === "string") {
-          sessionStorage.setItem("userRole", user.role);
-          navigate(`/${user.role.toLowerCase()}-page`);
-        } else {
-          console.log("Role type is not string");
+        sessionStorage.setItem("userRole", user.role);
+        switch (user.role) {
+          case "admin":
+            navigate("/admin-page");
+            break;
+
+          case "instructor":
+            navigate("/instructor-page");
+            break;
+
+          case "user":
+            navigate("/");
+            break;
+
+          default:
+            console.log("Unknown role!");
+            break;
         }
       } else {
         console.log("Login failed");
       }
     } catch (error) {
-      console.error("System error: ", error);
+      console.error("Unknown error: ", error);
     }
   };
 
-  const handleChangeEmail = (e: ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  };
-
-  const handleChangePass = (e: ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value);
-  };
-
   return (
-    <>
-      <div className="rounded-lg bg-slate-200 p-8">
-        <h2 className="mb-5 text-center text-2xl font-bold">Welcome Back</h2>
-        <p className="mb-8 text-center text-base font-light">
-          Login To Your FPT Account!
-        </p>
-        <div className="my-4 flex cursor-pointer items-center justify-center bg-blue-500">
-          <i className="fa-brands fa-facebook-f"></i>
-          <p className="ml-3">Continue with Facebook</p>
-        </div>
-        <div className="my-4 flex cursor-pointer items-center justify-center bg-cyan-400">
-          <i className="fa-brands fa-x-twitter"></i>
-          <p className="ml-3">Continue with Twitter</p>
-        </div>
-        <div className="my-4 flex cursor-pointer items-center justify-center bg-green-400">
-          <i className="fa-brands fa-google"></i>
-          <p className="ml-3">Continue with Google</p>
-        </div>
-        <form onSubmit={handleLogin}>
-          <Input
-            className="my-4 text-sm"
-            size="large"
-            placeholder="Email address"
-            prefix={<i className="fa-solid fa-envelope"></i>}
-            onChange={handleChangeEmail}
-          />
-          <Input
-            className="my-4 text-sm"
-            type="password"
-            size="large"
-            placeholder="Password"
-            prefix={<i className="fa-solid fa-key"></i>}
-            onChange={handleChangePass}
-          />
-          <Radio>Remember me</Radio>
-          <br />
-          <button
-            type="submit"
-            className="my-4 w-full rounded-md bg-amber-500 px-4 py-2 hover:bg-stone-900 hover:text-white"
-          >
-            Sign In
-          </button>
-        </form>
-        <p className="text-center">
-          Or{" "}
-          <a href="#" className="text-amber-500 hover:underline">
-            Forgot password
-          </a>
-          .
-        </p>
-        <Divider />
-        <p className="text-center text-sm">
-          Don't have an account?{" "}
-          <a className="text-amber-500 hover:underline" href="/sign-up">
-            Sign Up
-          </a>
-        </p>
-      </div>
-    </>
+    <Form onFinish={handleLogin}>
+      <Form.Item
+        name="email"
+        rules={[
+          { required: true, message: "Email is required!" },
+          { type: "email", message: "Please enter a valid email address!" },
+        ]}
+      >
+        <Input
+          className="text-sm"
+          size="large"
+          placeholder="Email address"
+          prefix={<i className="fa-solid fa-envelope"></i>}
+        />
+      </Form.Item>
+      <Form.Item
+        name="password"
+        rules={[{ required: true, message: "Password is required!" }]}
+      >
+        <Input
+          className="text-sm"
+          type="password"
+          size="large"
+          placeholder="Password"
+          prefix={<i className="fa-solid fa-key"></i>}
+        />
+      </Form.Item>
+      <Radio>Remember me</Radio>
+      <br />
+      <Form.Item>
+        <button
+          type="submit"
+          className="my-4 w-full rounded-md bg-amber-500 px-4 py-2 hover:bg-stone-900 hover:text-white"
+        >
+          Sign In
+        </button>
+      </Form.Item>
+    </Form>
   );
 };
 

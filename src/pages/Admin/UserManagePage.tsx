@@ -2,8 +2,9 @@ import { Layout } from "antd";
 import Sider from "antd/es/layout/Sider";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import { AppFooter, AppHeader } from "../../components";
-import { useSider } from "../../app/context/SiderProvider";
+import { useSider } from "../../app/context/SiderContext";
 import SiderAdmin from "../../components/Admin/SiderAdmin";
+import TableUser from "../../components/Admin/TableUser";
 
 const UserManagePage = () => {
   const { collapsed } = useSider();
@@ -31,6 +32,15 @@ const UserManagePage = () => {
               <section>
                 <h1 className="text-xl font-bold">User Management</h1>
               </section>
+              <div className="mt-4 bg-slate-200 p-4">
+                <input
+                  style={{ width: "100%" }}
+                  type="text"
+                  placeholder="Search by phone..."
+                  className="h-8 rounded-md pl-8 text-xs"
+                />
+              </div>
+              <TableUser />
             </div>
             <Footer className="footer">
               <AppFooter />

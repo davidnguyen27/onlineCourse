@@ -1,10 +1,12 @@
 import { Layout } from "antd";
 import Sider from "antd/es/layout/Sider";
 import { Content, Footer, Header } from "antd/es/layout/layout";
-import { AppFooter, AppHeader, AppSider, HelpContent } from "../../components";
+import { AppFooter, AppHeader } from "../../components";
 import { useSider } from "../../app/context/SiderContext";
+import SiderAdmin from "../../components/Admin/SiderAdmin";
+import TableUser from "../../components/Admin/TableUser";
 
-const HelpPage: React.FC = () => {
+const InstructorManagePage = () => {
   const { collapsed } = useSider();
 
   return (
@@ -20,13 +22,26 @@ const HelpPage: React.FC = () => {
           trigger={null}
           width={256}
         >
-          <AppSider
+          <SiderAdmin
             className={`transition-all duration-75 ${collapsed ? "w-0" : "w-64"}`}
           />
         </Sider>
         <Layout className="flex flex-1 flex-col">
           <Content className="flex-1 overflow-y-auto">
-            <HelpContent />
+            <div className="p-8">
+              <section>
+                <h1 className="text-xl font-bold">Instructor Management</h1>
+              </section>
+              <div className="mt-4 bg-slate-200 p-4">
+                <input
+                  style={{ width: "100%" }}
+                  type="text"
+                  placeholder="Search by phone..."
+                  className="h-8 rounded-md pl-8 text-xs"
+                />
+              </div>
+              <TableUser />
+            </div>
             <Footer className="footer">
               <AppFooter />
             </Footer>
@@ -37,4 +52,4 @@ const HelpPage: React.FC = () => {
   );
 };
 
-export default HelpPage;
+export default InstructorManagePage;
