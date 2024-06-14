@@ -1,38 +1,76 @@
-import { Divider } from "antd";
-import FormSignUp from "../../components/Form/FormSignUp";
+import { Form, Input, Radio } from "antd";
 
-const SignUpPage = () => {
+const FormSignUp = () => {
   return (
-    <div className="flex h-screen items-center justify-center">
-      <div className="max-h-dvh max-w-md rounded-lg bg-slate-200 p-8">
-        <h2 className="mb-5 text-center text-2xl font-bold">
-          Welcome to FPT Education
-        </h2>
-        <p className="mb-8 text-center text-base font-light">
-          Sign Up and Start Learning!
-        </p>
-        <FormSignUp />
-        <p className="text-center text-sm">
-          By signing up, you agree to our{" "}
-          <a className="text-amber-500 hover:underline" href="#">
-            Terms of Use
-          </a>{" "}
-          and{" "}
-          <a className="text-amber-500 hover:underline" href="#">
-            Privacy Policy
-          </a>
-          .
-        </p>
-        <Divider />
-        <p className="text-center text-sm">
-          Already have an account?{" "}
-          <a href="/sign-in" className="text-amber-500 hover:underline">
-            Login
-          </a>
-        </p>
-      </div>
-    </div>
+    <Form>
+      <Form.Item
+        name="fullName"
+        rules={[{ required: true, message: "Required!" }]}
+      >
+        <Input className="text-sm" size="large" placeholder="Full Name" />
+      </Form.Item>
+      <Form.Item
+        name="email"
+        rules={[
+          { required: true, message: "Required!" },
+          { type: "email", message: "Please enter a valid email address!" },
+        ]}
+      >
+        <Input className="text-sm" size="large" placeholder="Email address" />
+      </Form.Item>
+      <Form.Item
+        name="password"
+        rules={[
+          { required: true, message: "Required!" },
+          { min: 10, message: "Password must be at least 10 characters!" },
+        ]}
+      >
+        <Input
+          className="text-sm"
+          type="password"
+          size="large"
+          placeholder="Password"
+        />
+      </Form.Item>
+      <Form.Item
+        name="confirmPassword"
+        dependencies={["password"]}
+        rules={[
+          { required: true, message: "Required!" },
+          ({ getFieldValue }) => ({
+            validator(_, value) {
+              if (!value || getFieldValue("password") === value) {
+                return Promise.resolve();
+              }
+              return Promise.reject(
+                new Error("Confirm Password do not match!"),
+              );
+            },
+          }),
+        ]}
+      >
+        <Input
+          className="text-sm"
+          type="password"
+          size="large"
+          placeholder="Confirm Password"
+        />
+      </Form.Item>
+      <Radio>
+        I'm in for emails with exciting discounts and personalized
+        recommendations
+      </Radio>
+      <br />
+      <Form.Item>
+        <button
+          type="submit"
+          className="my-4 w-full rounded-md bg-amber-500 px-4 py-2 hover:bg-stone-900 hover:text-white"
+        >
+          Sign Up
+        </button>
+      </Form.Item>
+    </Form>
   );
 };
 
-export default SignUpPage;
+export default FormSignUp;
