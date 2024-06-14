@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({ onCourseCreate }) => {
 
   return (
     <AntHeader className="bg-white shadow-md flex justify-between items-center px-4">
-      <div className="text-lg font-bold">Cursus</div>
+      <div className="text-lg font-bold">Courses</div>
       <Input.Search placeholder="Search for Tuts, Videos, Tutors, Tests, and more..." style={{ maxWidth: 400 }} />
       <div className="flex items-center space-x-4">
         <Button type="primary" icon={<PlusOutlined />} onClick={showModal}>Create Course</Button>
