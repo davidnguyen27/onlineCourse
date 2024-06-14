@@ -1,16 +1,16 @@
-import { useSider } from '../../app/context/SiderProvider';
-import { Layout } from 'antd';
-import Sider from 'antd/es/layout/Sider';
-import { Header, Content, Footer } from 'antd/es/layout/layout';
-import { AppHeader, AppFooter } from '../../components';
-import SiderInstructor from '../../components/instructor/SiderInstructor';
-import Overview from '../../components/instructor/Overview';
+import { useSider } from "../../app/context/SiderContext";
+import { Layout } from "antd";
+import Sider from "antd/es/layout/Sider";
+import { Header, Content, Footer } from "antd/es/layout/layout";
+import { AppHeader, AppFooter } from "../../components";
+import SiderInstructor from "../../components/Instructor/SiderInstructor";
+import Overview from "../../components/Instructor/Overview";
 
 const StudentPage: React.FC = () => {
-    const { collapsed } = useSider();
+  const { collapsed } = useSider();
 
   return (
-<Layout className="flex h-screen w-screen flex-col">
+    <Layout className="flex h-screen w-screen flex-col">
       <Header className="header">
         <AppHeader />
       </Header>
@@ -41,7 +41,7 @@ const StudentPage: React.FC = () => {
         </Layout>
       </Layout>
     </Layout>
-  )
-}
+  );
+};
 
 export default StudentPage;
