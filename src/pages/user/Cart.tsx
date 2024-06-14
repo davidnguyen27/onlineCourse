@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { Breadcrumb, Layout } from "antd";
 import { useNavigate } from "react-router-dom";
-import CartItem from "../components/CartItem";
-import CartSummary from "../components/CartSummary";
-import "../styles/index.css";
-import AppHeader2 from "../components/AppHeader2";
-import AppFooter from "../components/AppFooter";
+import "../../styles/index.css";
+import { AppFooter, AppHeader2, CartItem, CartSummary } from "../../components";
 
 const { Content, Footer } = Layout;
 
@@ -58,7 +55,7 @@ const initialCartItems = [
 
 const Cart: React.FC = () => {
   const [cartItems, setCartItems] = useState(initialCartItems);
-  const [nightMode, setNightMode] = useState(false);
+  const [nightMode] = useState(false);
   const navigate = useNavigate();
 
   const handleRemove = (id: number) => {
@@ -67,7 +64,7 @@ const Cart: React.FC = () => {
 
   const originalPrice = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
-    0
+    0,
   );
   const discountPrice = cartItems.reduce((acc, item) => acc + item.discount, 0);
   const total = originalPrice - discountPrice;
@@ -77,8 +74,8 @@ const Cart: React.FC = () => {
       <AppHeader2 />
 
       <Content>
-        <div className="min-h-screen bg-gray-100 flex flex-col">
-          <div className="bg-white">
+        <div className="flex min-h-screen flex-col bg-gray-100">
+          <div className="bg-white" style={{ padding: "8px 0" }}>
             <Breadcrumb style={{ margin: "16px 0", padding: "0 140px" }}>
               <Breadcrumb.Item>
                 <span
@@ -98,13 +95,13 @@ const Cart: React.FC = () => {
               </Breadcrumb.Item>
             </Breadcrumb>
             <div style={{ margin: "16px 0", padding: "0 140px" }}>
-              <h1 className="text-2xl font-semibold mb-4">Shopping Cart</h1>
+              <h1 className="mb-4 text-2xl font-semibold">Shopping Cart</h1>
             </div>
           </div>
           <div className="flex-grow">
-            <div className="max-w-7xl mx-auto p-4">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="md:col-span-2 bg-white rounded-lg shadow-md p-4">
+            <div className="mx-auto max-w-7xl p-4">
+              <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
+                <div className="rounded-lg bg-white p-4 shadow-md md:col-span-2">
                   {cartItems.map((item) => (
                     <CartItem
                       key={item.id}
@@ -113,7 +110,7 @@ const Cart: React.FC = () => {
                     />
                   ))}
                 </div>
-                <div className="bg-white rounded-lg shadow-md p-4 h-72">
+                <div className="h-72 rounded-lg bg-white p-4 shadow-md">
                   <CartSummary
                     originalPrice={originalPrice}
                     discountPrice={discountPrice}

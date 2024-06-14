@@ -1,4 +1,4 @@
-import { useSider } from '../app/context/SiderProvider';
+import { useSider } from "../../app/context/SiderProvider";
 import { useNavigate } from 'react-router-dom';
 
 const AppHeader: React.FC = () => {
@@ -19,13 +19,13 @@ const AppHeader: React.FC = () => {
           </div>
           <div className="logo-box">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/FPT_Education_logo.svg/2560px-FPT_Education_logo.svg.png"
+              src="/logo/Fstudy123.png"
               alt="FPT Education"
             />
           </div>
           <div className="styles-x-axis search-box">
             <input
-              style={{ width: '100%' }}
+              style={{ width: "100%" }}
               type="text"
               placeholder="Search for courses, tutorials..."
               className="search-item"
@@ -34,12 +34,16 @@ const AppHeader: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="styles-x-axis justify-end w-1/2">
-        <div className="cursor-pointer text-xl mx-3" onClick={handleCartClick}>
+      <div className="styles-x-axis w-1/2 justify-end">
+        <div className="cart-styles" onClick={handleCartClick}> 
           <i className="fa-solid fa-cart-shopping"></i>
         </div>
-        <button className="sign-in-button">Sign in</button>
-        <button className="sign-up-button">Sign up</button>
+        <button className="sign-in-button" onClick={() => navigate("/sign-in")}>
+          Sign in
+        </button>
+        <button className="sign-up-button" onClick={() => navigate("/sign-up")}>
+          Sign up
+        </button>
       </div>
     </>
   );

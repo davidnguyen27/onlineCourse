@@ -1,6 +1,5 @@
-import { LockOutlined } from '@ant-design/icons';
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { LockOutlined } from "@ant-design/icons";
+import React from "react";
 
 interface OrderSummaryProps {
   total: number;
@@ -8,7 +7,11 @@ interface OrderSummaryProps {
   discountPrice: number;
 }
 
-const OrderSummary: React.FC<OrderSummaryProps> = ({ total, originalPrice, discountPrice }) => {
+const TotalOrder: React.FC<OrderSummaryProps> = ({
+  total,
+  originalPrice,
+  discountPrice,
+}) => {
   return (
     <div className="p-4">
       <div className="relative mb-4">
@@ -16,10 +19,10 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ total, originalPrice, disco
         <span
           className="block h-1 bg-red-500 mt-2"
           style={{
-            width: 'calc(15% + 4px)',
-            height: '1.5px',
-            marginLeft: '-2px',
-            marginBottom: '2px',
+            width: "calc(15% + 4px)",
+            height: "1.5px",
+            marginLeft: "-2px",
+            marginBottom: "2px",
           }}
         ></span>
       </div>
@@ -29,7 +32,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ total, originalPrice, disco
       </div>
       <hr className="mt-6" />
       <div className="flex justify-between mt-2">
-        <span>Discount Price</span>
+        <span>Taxes(GST)</span>
         <span className="font-semibold text-gray-500">${discountPrice}</span>
       </div>
       <hr className="mt-6" />
@@ -45,4 +48,4 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ total, originalPrice, disco
   );
 };
 
-export default OrderSummary;
+export default TotalOrder;

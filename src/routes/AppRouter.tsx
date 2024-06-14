@@ -1,15 +1,82 @@
-import { Route, Routes } from "react-router-dom";
-import Cart from "../pages/Cart";
-import CheckOut from "../pages/CheckOut";
+import { Navigate, Route, Routes } from "react-router-dom";
+import Cart from "../pages/user/Cart";
+import CheckOut from "../pages/user/CheckOut";
 import HomePage from "../pages/HomePage";
+import PaidMembershipPage from "../pages/user/PaidMembership";
+import MembershipCheckOut from "../pages/user/MembershipCheckOut";
+import SignInPage from "../pages/SigninPage";
+import SignUpPage from "../pages/SignupPage";
+import StudentPage from "../pages/user/StudentPage";
+import InstructorPage from "../pages/instructor/InstructorPage";
+
+interface ProtectedRouteProps {
+  component: React.ComponentType<any>;
+  allowedRoles: string[];
+}
+
+const withRoleProtection = ({
+  component: Component,
+  allowedRoles,
+}: ProtectedRouteProps): JSX.Element => {
+  const userRole = sessionStorage.getItem("userRole");
+
+  if (!allowedRoles.includes(userRole || "")) {
+    return <Navigate to="/" replace />;
+  }
+
+  return <Component />;
+};
 
 const AppRouter = () => {
   return (
-  <Routes>
+    <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/cart" element={<Cart />} />
-      <Route path="/checkout" element={<CheckOut />} />
+      <Route path="sign-in" element={<SignInPage />} />
+      <Route path="sign-up" element={<SignUpPage />} />
+      <Route
+        path="/student-page"
+        element={withRoleProtection({
+          component: StudentPage,
+          allowedRoles: ["student"],
+        })}
+      />
+      <Route
+        path="/cart"
+        element={withRoleProtection({
+          component: Cart,
+          allowedRoles: ["student"],
+        })}
+      />
+      <Route
+        path="/checkout"
+        element={withRoleProtection({
+          component: CheckOut,
+          allowedRoles: ["student"],
+        })}
+      />
+      <Route
+        path="/paid-membership"
+        element={withRoleProtection({
+          component: PaidMembershipPage,
+          allowedRoles: ["student"],
+        })}
+      />
+      <Route
+        path="/membership-Checkout"
+        element={withRoleProtection({
+          component: MembershipCheckOut,
+          allowedRoles: ["student"],
+        })}
+      />
+      <Route
+        path="/instructor-page"
+        element={withRoleProtection({
+          component: InstructorPage,
+          allowedRoles: ["instructor"],
+        })}
+      />
     </Routes>
-)};
+  );
+};
 
 export default AppRouter;
