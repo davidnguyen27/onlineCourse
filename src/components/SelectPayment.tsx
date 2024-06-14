@@ -1,13 +1,9 @@
-import {
-  CreditCardOutlined,
-  BankOutlined,
-  LockOutlined,
-} from "@ant-design/icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaypal } from "@fortawesome/free-brands-svg-icons";
-import React, { useState } from "react";
-import { Form, FormItemProps, Input, Select } from "antd";
-import "../styles/index.css";
+import { CreditCardOutlined, BankOutlined } from '@ant-design/icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faPaypal } from '@fortawesome/free-brands-svg-icons';
+import React, { useState } from 'react';
+import { Form, FormItemProps, Input, Select } from 'antd';
+import '../styles/index.css';
 
 const { Option } = Select;
 
@@ -17,64 +13,44 @@ interface OrderSummaryProps {
   discountPrice: number;
 }
 
-const SelectPayment: React.FC<OrderSummaryProps> = ({
-  total,
-  originalPrice,
-  discountPrice,
-}) => {
+const SelectPayment: React.FC<OrderSummaryProps> = ({ total, originalPrice, discountPrice }) => {
   const [selectedPayment, setSelectedPayment] = useState<string | null>(null);
 
   const handlePaymentSelect = (paymentMethod: string) => {
-    setSelectedPayment(
-      paymentMethod === selectedPayment ? null : paymentMethod
-    );
+    setSelectedPayment(paymentMethod === selectedPayment ? null : paymentMethod);
   };
 
   const MyFormItemContext = React.createContext<(string | number)[]>([]);
   interface MyFormItemGroupProps {
     prefix: string | number | (string | number)[];
   }
-  function toArr(
-    str: string | number | (string | number)[]
-  ): (string | number)[] {
+  function toArr(str: string | number | (string | number)[]): (string | number)[] {
     return Array.isArray(str) ? str : [str];
   }
-  const MyFormItemGroup: React.FC<
-    React.PropsWithChildren<MyFormItemGroupProps>
-  > = ({ prefix, children }) => {
+  const MyFormItemGroup: React.FC<React.PropsWithChildren<MyFormItemGroupProps>> = ({ prefix, children }) => {
     const prefixPath = React.useContext(MyFormItemContext);
-    const concatPath = React.useMemo(
-      () => [...prefixPath, ...toArr(prefix)],
-      [prefixPath, prefix]
-    );
+    const concatPath = React.useMemo(() => [...prefixPath, ...toArr(prefix)], [prefixPath, prefix]);
 
-    return (
-      <MyFormItemContext.Provider value={concatPath}>
-        {children}
-      </MyFormItemContext.Provider>
-    );
+    return <MyFormItemContext.Provider value={concatPath}>{children}</MyFormItemContext.Provider>;
   };
 
   const MyFormItem = ({ name, ...props }: FormItemProps) => {
     const prefixPath = React.useContext(MyFormItemContext);
-    const concatName =
-      name !== undefined ? [...prefixPath, ...toArr(name)] : undefined;
+    const concatName = name !== undefined ? [...prefixPath, ...toArr(name)] : undefined;
 
     return <Form.Item name={concatName} {...props} />;
   };
   return (
     <div className="p-4">
       <div className="relative mb-4">
-        <h2 className="font-semibold text-lg inline-block">
-          Select Payment Method
-        </h2>
+        <h2 className="font-semibold text-lg inline-block">Select Payment Method</h2>
         <span
           className="block h-1 bg-red-500 mt-2"
           style={{
-            width: "50px",
-            height: "1.5px",
-            marginLeft: "-2px",
-            marginBottom: "2px",
+            width: '50px',
+            height: '1.5px',
+            marginLeft: '-2px',
+            marginBottom: '2px',
           }}
         ></span>
       </div>
@@ -82,19 +58,15 @@ const SelectPayment: React.FC<OrderSummaryProps> = ({
         <div className="w-1/3 flex items-center justify-center">
           <button
             className={`relative border border-gray-300 bg-gray-200 p-4 w-full ${
-              selectedPayment === "creditCard" ? "bg-gray-300" : ""
+              selectedPayment === 'creditCard' ? 'bg-gray-300' : ''
             }`}
-            onClick={() => handlePaymentSelect("creditCard")}
+            onClick={() => handlePaymentSelect('creditCard')}
           >
             <span className="mr-2">
               <CreditCardOutlined />
             </span>
-            <span
-              className={selectedPayment === "creditCard" ? "hover-red" : ""}
-            >
-              Credit Card
-            </span>
-            {selectedPayment === "creditCard" && (
+            <span className={selectedPayment === 'creditCard' ? 'hover-red' : ''}>Credit Card</span>
+            {selectedPayment === 'creditCard' && (
               <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-500"></div>
             )}
           </button>
@@ -102,17 +74,15 @@ const SelectPayment: React.FC<OrderSummaryProps> = ({
         <div className="w-1/3 flex items-center justify-center">
           <button
             className={`relative border border-gray-300 bg-gray-200 p-4 w-full ${
-              selectedPayment === "paypal" ? "bg-gray-300" : ""
+              selectedPayment === 'paypal' ? 'bg-gray-300' : ''
             }`}
-            onClick={() => handlePaymentSelect("paypal")}
+            onClick={() => handlePaymentSelect('paypal')}
           >
             <span className="mr-2">
-              <FontAwesomeIcon icon={faPaypal} />
+              <i className="fa-brands fa-paypal"></i>
             </span>
-            <span className={selectedPayment === "paypal" ? "hover-red" : ""}>
-              Paypal
-            </span>
-            {selectedPayment === "paypal" && (
+            <span className={selectedPayment === 'paypal' ? 'hover-red' : ''}>Paypal</span>
+            {selectedPayment === 'paypal' && (
               <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-500"></div>
             )}
           </button>
@@ -120,19 +90,15 @@ const SelectPayment: React.FC<OrderSummaryProps> = ({
         <div className="w-1/3 flex items-center justify-center">
           <button
             className={`relative border border-gray-300 bg-gray-200 p-4 w-full ${
-              selectedPayment === "bankTransfer" ? "bg-gray-300" : ""
+              selectedPayment === 'bankTransfer' ? 'bg-gray-300' : ''
             }`}
-            onClick={() => handlePaymentSelect("bankTransfer")}
+            onClick={() => handlePaymentSelect('bankTransfer')}
           >
             <span className="mr-2">
               <BankOutlined />
             </span>
-            <span
-              className={selectedPayment === "bankTransfer" ? "hover-red" : ""}
-            >
-              Bank Transfer
-            </span>
-            {selectedPayment === "bankTransfer" && (
+            <span className={selectedPayment === 'bankTransfer' ? 'hover-red' : ''}>Bank Transfer</span>
+            {selectedPayment === 'bankTransfer' && (
               <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-500"></div>
             )}
           </button>
@@ -140,32 +106,24 @@ const SelectPayment: React.FC<OrderSummaryProps> = ({
       </div>
       {selectedPayment && (
         <div className="p-4 mt-4">
-          {selectedPayment === "creditCard" && (
+          {selectedPayment === 'creditCard' && (
             <Form name="form_creditCard" layout="vertical">
-              <MyFormItemGroup prefix={["creditCard"]}>
-                <div style={{ display: "flex", gap: "10px" }}>
-                  <MyFormItem
-                    name="holderName"
-                    label="Holder Name"
-                    style={{ flex: 1, marginRight: "10px" }}
-                  >
+              <MyFormItemGroup prefix={['creditCard']}>
+                <div style={{ display: 'flex', gap: '10px' }}>
+                  <MyFormItem name="holderName" label="Holder Name" style={{ flex: 1, marginRight: '10px' }}>
                     <Input placeholder="Enter Holder Name" />
                   </MyFormItem>
-                  <MyFormItem
-                    name="cardNumber"
-                    label="Card Number"
-                    style={{ flex: 1 }}
-                  >
+                  <MyFormItem name="cardNumber" label="Card Number" style={{ flex: 1 }}>
                     <Input placeholder="Card #" />
                   </MyFormItem>
                 </div>
-                <div style={{ display: "flex", gap: "10px" }}>
+                <div style={{ display: 'flex', gap: '10px' }}>
                   <MyFormItem
                     name="expirationMonth"
                     label="Expiration Month"
                     hasFeedback
-                    style={{ flex: 1, marginRight: "10px" }}
-                    rules={[{ message: "Please select your bank !" }]}
+                    style={{ flex: 1, marginRight: '10px' }}
+                    rules={[{ message: 'Please select your bank !' }]}
                   >
                     <Select placeholder="Month">
                       <Option value="January">January</Option>
@@ -182,56 +140,43 @@ const SelectPayment: React.FC<OrderSummaryProps> = ({
                       <Option value="December">December</Option>
                     </Select>
                   </MyFormItem>
-                  <MyFormItem
-                    name="expirationYear"
-                    label="Expiration Year"
-                    style={{ flex: 1 }}
-                  >
+                  <MyFormItem name="expirationYear" label="Expiration Year" style={{ flex: 1 }}>
                     <Input placeholder="Year" />
                   </MyFormItem>
-                  <MyFormItem
-                    name="cvc"
-                    label="Card Verification Code"
-                    style={{ flex: 1 }}
-                  >
+                  <MyFormItem name="cvc" label="Card Verification Code" style={{ flex: 1 }}>
                     <Input placeholder="CVC" />
                   </MyFormItem>
                 </div>
               </MyFormItemGroup>
             </Form>
           )}
-          {selectedPayment === "paypal" && (
+          {selectedPayment === 'paypal' && (
             <div>
-              After payment via PayPal's secure checkout, we will send you a
-              link to download your files.
+              After payment via PayPal's secure checkout, we will send you a link to download your files.
             </div>
           )}
-          {selectedPayment === "bankTransfer" && (
+          {selectedPayment === 'bankTransfer' && (
             <Form name="form_creditCard" layout="vertical">
-              <MyFormItemGroup prefix={["creditCard"]}>
-                <div style={{ display: "flex", gap: "10px" }}>
+              <MyFormItemGroup prefix={['creditCard']}>
+                <div style={{ display: 'flex', gap: '10px' }}>
                   <MyFormItem
                     name="accountHolderName"
                     label="Account Holder Name"
-                    style={{ flex: 1, marginRight: "10px" }}
+                    style={{ flex: 1, marginRight: '10px' }}
                   >
                     <Input placeholder="Enter Your Full Name" />
                   </MyFormItem>
-                  <MyFormItem
-                    name="accountNumber"
-                    label="Account Number"
-                    style={{ flex: 1 }}
-                  >
+                  <MyFormItem name="accountNumber" label="Account Number" style={{ flex: 1 }}>
                     <Input placeholder="Enter Account Number" />
                   </MyFormItem>
                 </div>
-                <div style={{ display: "flex", gap: "10px" }}>
+                <div style={{ display: 'flex', gap: '10px' }}>
                   <MyFormItem
                     name="bankName"
                     label="Bank Name"
                     hasFeedback
-                    style={{ flex: 1, marginRight: "10px" }}
-                    rules={[{ message: "Please select your bank !" }]}
+                    style={{ flex: 1, marginRight: '10px' }}
+                    rules={[{ message: 'Please select your bank !' }]}
                   >
                     <Select placeholder="Please select a bank">
                       <Option value="Vietcombank">Vietcombank</Option>
@@ -241,11 +186,7 @@ const SelectPayment: React.FC<OrderSummaryProps> = ({
                       <Option value="DongABank">DongABank</Option>
                     </Select>
                   </MyFormItem>
-                  <MyFormItem
-                    name="ifscCode"
-                    label="IFSC Code"
-                    style={{ flex: 1 }}
-                  >
+                  <MyFormItem name="ifscCode" label="IFSC Code" style={{ flex: 1 }}>
                     <Input placeholder="Enter IFSC Code" />
                   </MyFormItem>
                 </div>
@@ -257,23 +198,19 @@ const SelectPayment: React.FC<OrderSummaryProps> = ({
       <hr />
       <div className="p-4 mt-4">
         <div className="relative mb-8">
-          <h2 className="font-semibold text-lg inline-block">
-            Select Payment Method
-          </h2>
+          <h2 className="font-semibold text-lg inline-block">Select Payment Method</h2>
           <span
             className="block h-1 bg-red-500 mt-2"
             style={{
-              width: "50px",
-              height: "1.5px",
-              marginLeft: "-2px",
-              marginBottom: "2px",
+              width: '50px',
+              height: '1.5px',
+              marginLeft: '-2px',
+              marginBottom: '2px',
             }}
           ></span>
         </div>
         <div className="font-semibold flex justify-between mt-2 text-15">
-          <span>
-            Complete Python Bootcamp: Go from zero to hero in Python 3
-          </span>
+          <span>Complete Python Bootcamp: Go from zero to hero in Python 3</span>
           <span className="text-black">${originalPrice}</span>
         </div>
         <hr className="mt-6" />
