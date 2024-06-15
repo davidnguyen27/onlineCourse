@@ -10,10 +10,6 @@ const AppHeader: React.FC = () => {
 
   const { user, logout } = useAuth();
 
-  const handleCartClick = () => {
-    navigate("/cart");
-  };
-
   const handleLogout = () => {
     logout();
     navigate("/");
@@ -59,7 +55,7 @@ const AppHeader: React.FC = () => {
         </div>
       </div>
       <div className="styles-x-axis w-1/2 justify-end">
-        <div className="cart-styles" onClick={handleCartClick}>
+        <div className="cart-styles">
           <i className="fa-solid fa-cart-shopping"></i>
         </div>
         {user ? (
