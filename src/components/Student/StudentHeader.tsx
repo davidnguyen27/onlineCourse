@@ -1,6 +1,6 @@
-import React from 'react';
-import { useSider } from '../../app/context/SiderProvider';
-import StudentUser from './StudentUser';
+import React from "react";
+import { useSider } from "../../app/context/SiderContext";
+import StudentUser from "./StudentUser";
 
 const StudentHeader: React.FC = () => {
   const { toggleSider } = useSider();
@@ -20,7 +20,7 @@ const StudentHeader: React.FC = () => {
           </div>
           <div className="styles-x-axis search-box">
             <input
-              style={{ width: '100%' }}
+              style={{ width: "100%" }}
               type="text"
               placeholder="Search for courses, tutorials..."
               className="search-item"
