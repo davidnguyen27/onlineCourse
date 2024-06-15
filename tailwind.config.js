@@ -2,7 +2,16 @@
 export default {
   content: ['./index.html', './src/**/*.{css,js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      transitionProperty: {
+        transform: 'transform',
+      },
+    },
+  },
+  variants: {
+    extends: {
+      translate: ['responsive', 'hover', 'focus'],
+    },
   },
   plugins: [],
 };
