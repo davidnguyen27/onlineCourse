@@ -1,13 +1,14 @@
-import { Dropdown, MenuProps, Space } from "antd";
-import { useSider } from "../../app/context/SiderContext";
 import { useNavigate } from "react-router-dom";
+import { useSider } from "../../app/context/SiderContext";
+import { Dropdown, MenuProps, Space } from "antd";
 import { useAuth } from "../../app/context/AuthContext";
 
 const AppHeader: React.FC = () => {
   const { toggleSider } = useSider();
-  const { user, logout } = useAuth();
 
   const navigate = useNavigate();
+
+  const { user, logout } = useAuth();
 
   const handleCartClick = () => {
     navigate("/cart");
@@ -40,12 +41,12 @@ const AppHeader: React.FC = () => {
           <div className="menu-bar" onClick={toggleSider}>
             <i className="fa-solid fa-bars"></i>
           </div>
-          <div className="logo-box">
+          <a href="/" className="logo-box">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/FPT_Education_logo.svg/2560px-FPT_Education_logo.svg.png"
               alt="FPT Education"
             />
-          </div>
+          </a>
           <div className="styles-x-axis search-box">
             <input
               style={{ width: "100%" }}
