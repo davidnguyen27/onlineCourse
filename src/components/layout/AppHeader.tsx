@@ -5,37 +5,19 @@ import { useAuth } from "../../app/context/AuthContext";
 
 const AppHeader: React.FC = () => {
   const { toggleSider } = useSider();
-  const { user, logout } = useAuth();
 
   const navigate = useNavigate();
 
-  const handleCartClick = () => {
-    navigate("/cart");
-  };
+  const { user, logout } = useAuth();
 
   const handleLogout = () => {
     logout();
     navigate("/");
   };
 
-  // const handleMenuClick: MenuProps["onClick"] = (e) => {
-  //   if (e.key === "0" && user) {
-  //     // Assuming the user object has a role property
-  //     if (user.role === "student") {
-  //       navigate("/student-profile-page");
-  //     } else if (user.role === "teacher") {
-  //       navigate("/teacher-profile-page");
-  //     } else if (user.role === "admin") {
-  //       navigate("/admin-profile-page");
-  //     }
-  //   } else if (e.key === "2") {
-  //     handleLogout();
-  //   }
-  // };
-
   const items: MenuProps["items"] = [
     {
-      label: <a onClick={() => navigate("/student-profile-page")}>Profile</a>,
+      label: <a href="#">Profile</a>,
       key: "0",
     },
     {
@@ -73,7 +55,7 @@ const AppHeader: React.FC = () => {
         </div>
       </div>
       <div className="styles-x-axis w-1/2 justify-end">
-        <div className="cart-styles" onClick={handleCartClick}>
+        <div className="cart-styles">
           <i className="fa-solid fa-cart-shopping"></i>
         </div>
         {user ? (
@@ -89,6 +71,7 @@ const AppHeader: React.FC = () => {
           </Dropdown>
         ) : (
           <>
+            {" "}
             <button
               className="sign-in-button"
               onClick={() => navigate("/sign-in")}

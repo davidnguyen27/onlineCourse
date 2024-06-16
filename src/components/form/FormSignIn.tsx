@@ -30,7 +30,7 @@ const FormSignIn = () => {
             navigate("/instructor-page");
             break;
 
-          case "student":
+          case "user":
             navigate("/");
             break;
 
