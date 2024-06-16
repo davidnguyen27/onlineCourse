@@ -14,7 +14,9 @@ import {
 } from "../../components";
 
 const HomePage: React.FC = () => {
-  const { collapsed } = useSider();
+  const siderContext = useSider();
+
+  const { collapsed } = siderContext;
 
   return (
     <Layout className="flex h-screen w-screen flex-col">

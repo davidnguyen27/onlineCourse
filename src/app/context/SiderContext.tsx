@@ -1,5 +1,5 @@
-import { createContext, useContext, useState } from 'react';
-import { SiderContextType, SiderProviderProps } from '../../models/Types';
+import { createContext, useContext, useState } from "react";
+import { SiderContextType, SiderProviderProps } from "../../models/Types";
 
 const SiderContext = createContext<SiderContextType | undefined>(undefined);
 
@@ -10,11 +10,15 @@ export const SiderProvider: React.FC<SiderProviderProps> = ({ children }) => {
     setCollapsed(!collapsed);
   };
 
-  return <SiderContext.Provider value={{ collapsed, toggleSider }}>{children}</SiderContext.Provider>;
+  return (
+    <SiderContext.Provider value={{ collapsed, toggleSider }}>
+      {children}
+    </SiderContext.Provider>
+  );
 };
 
-export const useSider = (): SiderContextType => {
+export const useSider = () => {
   const context = useContext(SiderContext);
-  if (!context) throw new Error('useSider must be used within a SiderProvider');
+  if (!context) throw new Error("useSider must be used within a SiderProvider");
   return context;
 };

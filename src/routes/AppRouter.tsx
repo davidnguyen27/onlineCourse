@@ -8,6 +8,9 @@ import SignUpPage from "../pages/User/SignUpPage";
 import { AuthContext, AuthProvider } from "../app/context/AuthContext";
 import { useContext } from "react";
 import StudentPage from "../pages/User/StudentPage";
+import CategoriesManagePage from "../pages/Admin/CategoriesManagePage";
+import UserManagePage from "../pages/Admin/UserManagePage";
+import InstructorManagePage from "../pages/Admin/InstructorManagePage";
 
 interface ProtectedRouteProps {
   element: JSX.Element;
@@ -39,12 +42,20 @@ const AppRouter = () => {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
+          {/* User */}
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute element={<HomePage />} allowedRoles={["user"]} />
+            }
+          />
           <Route path="/" element={<HomePage />} />
           <Route path="sign-in" element={<SignInPage />} />
           <Route path="sign-up" element={<SignUpPage />} />
           <Route path="/detail" element={<DetailCoursePage />} />
           <Route path="/help-page" element={<HelpPage />} />
-          <Route path="/student-management" element={<StudentPage />} />
+
+          {/* Admin  */}
           <Route
             path="/admin-page"
             element={
@@ -55,11 +66,15 @@ const AppRouter = () => {
             }
           />
           <Route
-            path="/"
-            element={
-              <ProtectedRoute element={<HomePage />} allowedRoles={["user"]} />
-            }
+            path="/categories-management"
+            element={<CategoriesManagePage />}
           />
+          <Route path="/user-management" element={<UserManagePage />} />
+          <Route
+            path="/instructor-management"
+            element={<InstructorManagePage />}
+          />
+          <Route path="/student-management" element={<StudentPage />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

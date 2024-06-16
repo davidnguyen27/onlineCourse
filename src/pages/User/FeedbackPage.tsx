@@ -5,7 +5,7 @@ import Sider from "antd/es/layout/Sider";
 import { AppFooter, AppHeader, AppSider } from "../../components";
 import { UploadOutlined } from "@ant-design/icons";
 import { UploadChangeParam } from "antd/lib/upload";
-import { useSider } from "../../app/context/SiderProvider";
+import { useSider } from "../../app/context/SiderContext";
 
 const FeedbackPage: React.FC = () => {
   const { collapsed } = useSider();

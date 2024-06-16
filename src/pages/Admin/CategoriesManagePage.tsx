@@ -4,7 +4,7 @@ import { Content, Footer, Header } from "antd/es/layout/layout";
 import { AppFooter, AppHeader } from "../../components";
 import { useSider } from "../../app/context/SiderContext";
 import SiderAdmin from "../../components/Admin/SiderAdmin";
-import TableUser from "../../components/Admin/TableUser";
+import TableCategories from "../../components/Admin/TableCagories";
 
 const CategoriesManagePage = () => {
   const { collapsed } = useSider();
@@ -40,7 +40,7 @@ const CategoriesManagePage = () => {
                   className="h-8 rounded-md pl-8 text-xs"
                 />
               </div>
-              <TableUser />
+              <TableCategories />
             </div>
             <Footer className="footer">
               <AppFooter />

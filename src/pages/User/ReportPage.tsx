@@ -1,6 +1,6 @@
 import { Layout } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
-import { useSider } from "../../app/context/SiderProvider";
+import { useSider } from "../../app/context/SiderContext";
 import { AppFooter, AppHeader, AppSider } from "../../components";
 import Sider from "antd/es/layout/Sider";
 import ReportContents from "../../components/Report/ReportContents";
