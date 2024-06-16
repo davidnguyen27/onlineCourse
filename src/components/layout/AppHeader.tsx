@@ -43,7 +43,6 @@ const AppHeader: React.FC = () => {
               alt="FPT Education"
             />
           </a>
-
           <div className="styles-x-axis search-box">
             <input
               style={{ width: "100%" }}
