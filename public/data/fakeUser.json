@@ -2,7 +2,7 @@
   {
     "email": "user1@gmail.com",
     "password": "1",
-    "role": "user"
+    "role": "student"
   },
   {
     "email": "user2@gmail.com",
@@ -13,10 +13,5 @@
     "email": "user3@gmail.com",
     "password": "3",
     "role": "admin"
-  },
-  {
-    "email": "user4@gmail.com",
-    "password": "4",
-    "role": "student"
   }
 ]

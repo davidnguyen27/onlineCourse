@@ -91,7 +91,7 @@ const AppSider: React.FC<{ className?: string }> = () => {
           className="hover:rounded-none hover:bg-amber-500 hover:text-black"
           key="11"
           icon={<i className="fa-solid fa-flag"></i>}
-          onClick={() => navigate("/report")}
+          onClick={() => navigate("/report-page")}
         >
           Report
         </Menu.Item>

@@ -5,48 +5,48 @@ import { useAuth } from "../../app/context/AuthContext";
 
 const AppHeader: React.FC = () => {
   const { toggleSider } = useSider();
-  const navigate = useNavigate();
   const { user, logout } = useAuth();
+
+  const navigate = useNavigate();
+
+  const handleCartClick = () => {
+    navigate("/cart");
+  };
 
   const handleLogout = () => {
     logout();
     navigate("/");
   };
 
-  const handleMenuClick: MenuProps["onClick"] = (e) => {
-    if (e.key === "0" && user) {
-      // Assuming the user object has a role property
-      if (user.role === "student") {
-        navigate("/student-profile-page");
-      } else if (user.role === "teacher") {
-        navigate("/teacher-profile-page");
-      } else if (user.role === "admin") {
-        navigate("/admin-profile-page");
-      }
-    } else if (e.key === "2") {
-      handleLogout();
-    }
-  };
+  // const handleMenuClick: MenuProps["onClick"] = (e) => {
+  //   if (e.key === "0" && user) {
+  //     // Assuming the user object has a role property
+  //     if (user.role === "student") {
+  //       navigate("/student-profile-page");
+  //     } else if (user.role === "teacher") {
+  //       navigate("/teacher-profile-page");
+  //     } else if (user.role === "admin") {
+  //       navigate("/admin-profile-page");
+  //     }
+  //   } else if (e.key === "2") {
+  //     handleLogout();
+  //   }
+  // };
 
   const items: MenuProps["items"] = [
     {
-      label: 'Profile',
+      label: <a onClick={() => navigate("/student-profile-page")}>Profile</a>,
       key: "0",
     },
     {
-      label: 'My course',
+      label: <a href="#">My course</a>,
       key: "1",
     },
     {
-      label: 'Logout',
+      label: <a onClick={handleLogout}>Logout</a>,
       key: "2",
     },
   ];
-
-  const menuProps = {
-    items,
-    onClick: handleMenuClick,
-  };
 
   return (
     <>
@@ -73,11 +73,11 @@ const AppHeader: React.FC = () => {
         </div>
       </div>
       <div className="styles-x-axis w-1/2 justify-end">
-        <div className="cart-styles">
+        <div className="cart-styles" onClick={handleCartClick}>
           <i className="fa-solid fa-cart-shopping"></i>
         </div>
         {user ? (
-          <Dropdown menu={menuProps} trigger={['click']}>
+          <Dropdown menu={{ items }}>
             <a className="mr-9 flex" onClick={(e) => e.preventDefault()}>
               <Space>
                 <img

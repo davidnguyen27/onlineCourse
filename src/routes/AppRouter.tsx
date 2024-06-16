@@ -11,8 +11,12 @@ import StudentPage from "../pages/User/StudentPage";
 import CategoriesManagePage from "../pages/Admin/CategoriesManagePage";
 import UserManagePage from "../pages/Admin/UserManagePage";
 import InstructorManagePage from "../pages/Admin/InstructorManagePage";
-import StudentHomePage from "../pages/Student/StudentHomePage";
 import StudentProfilePage from "../pages/Student/StudentProfilePage";
+import StudentCourseDetailPage from "../pages/Student/StudentCourseDetailPage";
+import ReportPage from "../pages/User/ReportPage";
+import Cart from "../pages/User/Cart";
+import CheckOut from "../pages/User/CheckOut";
+import PaidMembershipPage from "../pages/User/PaidMembership";
 
 interface ProtectedRouteProps {
   element: JSX.Element;
@@ -44,18 +48,46 @@ const AppRouter = () => {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-          {/* User */}
-          <Route
-            path="/"
-            element={
-              <ProtectedRoute element={<HomePage />} allowedRoles={["user"]} />
-            }
-          />
+          {/* Student */}
           <Route path="/" element={<HomePage />} />
           <Route path="sign-in" element={<SignInPage />} />
           <Route path="sign-up" element={<SignUpPage />} />
           <Route path="/detail" element={<DetailCoursePage />} />
           <Route path="/help-page" element={<HelpPage />} />
+          <Route path="/report-page" element={<ReportPage />} />
+          <Route
+            path="/view-detail"
+            element={
+              <ProtectedRoute
+                element={<StudentCourseDetailPage />}
+                allowedRoles={["student"]}
+              />
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <ProtectedRoute element={<Cart />} allowedRoles={["student"]} />
+            }
+          />
+          <Route
+            path="/checkout"
+            element={
+              <ProtectedRoute
+                element={<CheckOut />}
+                allowedRoles={["student"]}
+              />
+            }
+          />
+          <Route
+            path="/paid-membership"
+            element={
+              <ProtectedRoute
+                element={<PaidMembershipPage />}
+                allowedRoles={["student"]}
+              />
+            }
+          />
 
           {/* Admin  */}
           <Route
@@ -64,15 +96,6 @@ const AppRouter = () => {
               <ProtectedRoute
                 element={<AdminPage />}
                 allowedRoles={["admin"]}
-              />
-            }
-          />
-          <Route
-            path="/student-page"
-            element={
-              <ProtectedRoute
-                element={<StudentHomePage />}
-                allowedRoles={["user"]}
               />
             }
           />
