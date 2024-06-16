@@ -46,7 +46,7 @@ const StudentUser: React.FC = () => {
           <Menu.Item
             key="1"
             icon={<UserOutlined />}
-            onClick={() => { navigate('/StudentProfilePage'); setMenuVisible(false); }}
+            onClick={() => { navigate('/student-profile-page'); setMenuVisible(false); }}
             className="hover:rounded-none hover:bg-amber-500 hover:text-black"
           >
             Profile

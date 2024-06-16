@@ -33,6 +33,10 @@ const FormSignIn = () => {
           case "user":
             navigate("/");
             break;
+          
+          case "student":
+            navigate("/student-page");
+            break;
 
           default:
             console.log("Unknown role!");

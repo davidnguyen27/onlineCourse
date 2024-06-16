@@ -8,6 +8,9 @@ import SignUpPage from "../pages/User/SignUpPage";
 import { AuthContext, AuthProvider } from "../app/context/AuthContext";
 import { useContext } from "react";
 import StudentPage from "../pages/User/StudentPage";
+import StudentHomePage from "../pages/Student/StudentHomePage";
+import StudentProfilePage from "../pages/Student/StudentProfilePage";
+import InstructorPage from "../pages/Instructor/InstructorPage";
 
 interface ProtectedRouteProps {
   element: JSX.Element;
@@ -51,6 +54,33 @@ const AppRouter = () => {
               <ProtectedRoute
                 element={<AdminPage />}
                 allowedRoles={["admin"]}
+              />
+            }
+          />
+          <Route
+            path="/instructor-page"
+            element={
+              <ProtectedRoute
+                element={<InstructorPage />}
+                allowedRoles={["instructor"]}
+              />
+            }
+          />
+          <Route
+            path="/student-page"
+            element={
+              <ProtectedRoute
+                element={<StudentHomePage />}
+                allowedRoles={["student"]}
+              />
+            }
+          />
+          <Route
+            path="/student-profile-page"
+            element={
+              <ProtectedRoute
+                element={<StudentProfilePage />}
+                allowedRoles={["student"]}
               />
             }
           />

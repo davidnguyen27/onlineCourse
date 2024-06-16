@@ -5,9 +5,7 @@ import { useAuth } from "../../app/context/AuthContext";
 
 const AppHeader: React.FC = () => {
   const { toggleSider } = useSider();
-
   const navigate = useNavigate();
-
   const { user, logout } = useAuth();
 
   const handleLogout = () => {
@@ -15,20 +13,40 @@ const AppHeader: React.FC = () => {
     navigate("/");
   };
 
+  const handleMenuClick: MenuProps["onClick"] = (e) => {
+    if (e.key === "0" && user) {
+      // Assuming the user object has a role property
+      if (user.role === "student") {
+        navigate("/student-profile-page");
+      } else if (user.role === "teacher") {
+        navigate("/teacher-profile-page");
+      } else if (user.role === "admin") {
+        navigate("/admin-profile-page");
+      }
+    } else if (e.key === "2") {
+      handleLogout();
+    }
+  };
+
   const items: MenuProps["items"] = [
     {
-      label: <a href="#">Profile</a>,
+      label: 'Profile',
       key: "0",
     },
     {
-      label: <a href="#">My course</a>,
+      label: 'My course',
       key: "1",
     },
     {
-      label: <a onClick={handleLogout}>Logout</a>,
+      label: 'Logout',
       key: "2",
     },
   ];
+
+  const menuProps = {
+    items,
+    onClick: handleMenuClick,
+  };
 
   return (
     <>
@@ -59,7 +77,7 @@ const AppHeader: React.FC = () => {
           <i className="fa-solid fa-cart-shopping"></i>
         </div>
         {user ? (
-          <Dropdown menu={{ items }}>
+          <Dropdown menu={menuProps} trigger={['click']}>
             <a className="mr-9 flex" onClick={(e) => e.preventDefault()}>
               <Space>
                 <img
@@ -71,7 +89,6 @@ const AppHeader: React.FC = () => {
           </Dropdown>
         ) : (
           <>
-            {" "}
             <button
               className="sign-in-button"
               onClick={() => navigate("/sign-in")}
