@@ -2,7 +2,11 @@
   {
     "email": "user1@gmail.com",
     "password": "1",
+<<<<<<< HEAD
     "role": "user"
+=======
+    "role": "student"
+>>>>>>> quangdu
   },
   {
     "email": "user2@gmail.com",

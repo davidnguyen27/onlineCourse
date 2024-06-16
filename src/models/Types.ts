@@ -47,4 +47,8 @@ export type InstructorChannelProps = {
   likes: number;
   dislikes: number;
   shares: number;
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> quangdu

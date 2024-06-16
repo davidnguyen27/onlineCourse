@@ -1,15 +1,14 @@
 import { Layout } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
-import AppHeader from "../../components/Layout/AppHeader";
+import { useSider } from "../../app/context/SiderProvider";
+import { AppFooter, AppHeader, AppSider } from "../../components";
 import Sider from "antd/es/layout/Sider";
-import AppSider from "../../components/Layout/AppSider";
-import AppFooter from "../../components/Layout/AppFooter";
-import { useSider } from "../../app/context/SiderContext";
+import ReportContents from "../../components/Report/ReportContents";
+import ReportForm from "../../components/Report/ReportForm";
 
-import DetailCourseContent from "../../components/User/DetailCourseContent";
-
-const DetailCoursePage: React.FC = () => {
+const ReportPage = () => {
   const { collapsed } = useSider();
+
   return (
     <Layout className="flex h-screen w-screen flex-col">
       <Header className="header">
@@ -21,17 +20,18 @@ const DetailCoursePage: React.FC = () => {
           collapsed={collapsed}
           collapsedWidth={0}
           trigger={null}
-          width={256}
+          width={220}
         >
           <AppSider
             className={`transition-all duration-75 ${collapsed ? "w-0" : "w-64"}`}
           />
         </Sider>
+
         <Layout className="flex flex-1 flex-col">
-          <Content className="flex-1 overflow-y-auto">
-            <div className="p-4">
-              <DetailCourseContent />
-            </div>
+          <Content className="flex-1 overflow-auto">
+            <ReportContents />
+            <ReportForm />
+
             <Footer className="footer mt-auto">
               <AppFooter />
             </Footer>
@@ -42,4 +42,4 @@ const DetailCoursePage: React.FC = () => {
   );
 };
 
-export default DetailCoursePage;
+export default ReportPage;

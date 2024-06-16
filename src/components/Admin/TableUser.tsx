@@ -1,4 +1,5 @@
 import { Space, Switch, Table } from "antd";
+
 import type { TableProps } from "antd";
 
 interface DataType {
@@ -45,6 +46,7 @@ const columns: TableProps<DataType>["columns"] = [
   {
     title: "Action",
     key: "action",
+
     render: () => (
       <Space size="middle">
         <a>
@@ -80,6 +82,7 @@ const data: DataType[] = [
     address: "Sydney No. 1 Lake Park",
     tags: ["cool", "teacher"],
   },
+
   {
     key: "4",
     name: "Joe Black",
