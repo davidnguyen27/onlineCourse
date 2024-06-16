@@ -1,9 +1,9 @@
 import { Layout } from "antd";
 import Sider from "antd/es/layout/Sider";
 import { Content, Footer, Header } from "antd/es/layout/layout";
-import StudentHeader from "../../components/Student/StudentHeader";
+import AppHeader from "../../components/Layout/AppHeader";
 import AppFooter from "../../components/Layout/AppFooter";
-import AppSider from "../../components/Layout/AppSider";
+import StudentSider from "../../components/Student/StudentSider";
 import { useSider } from "../../app/context/SiderContext";
 
 const StudentHomePage: React.FC = () => {
@@ -12,7 +12,7 @@ const StudentHomePage: React.FC = () => {
   return (
     <Layout className="flex h-screen w-screen flex-col">
       <Header className="header">
-        <StudentHeader />
+        <AppHeader />
       </Header>
       <Layout className="flex flex-1 overflow-y-auto">
         <Sider
@@ -22,7 +22,7 @@ const StudentHomePage: React.FC = () => {
           trigger={null}
           width={256}
         >
-          <AppSider
+          <StudentSider
             className={`transition-all duration-75 ${collapsed ? "w-0" : "w-64"}`}
           />
         </Sider>

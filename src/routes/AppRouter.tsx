@@ -11,6 +11,8 @@ import StudentPage from "../pages/User/StudentPage";
 import CategoriesManagePage from "../pages/Admin/CategoriesManagePage";
 import UserManagePage from "../pages/Admin/UserManagePage";
 import InstructorManagePage from "../pages/Admin/InstructorManagePage";
+import StudentHomePage from "../pages/Student/StudentHomePage";
+import StudentProfilePage from "../pages/Student/StudentProfilePage";
 
 interface ProtectedRouteProps {
   element: JSX.Element;
@@ -62,6 +64,24 @@ const AppRouter = () => {
               <ProtectedRoute
                 element={<AdminPage />}
                 allowedRoles={["admin"]}
+              />
+            }
+          />
+          <Route
+            path="/student-page"
+            element={
+              <ProtectedRoute
+                element={<StudentHomePage />}
+                allowedRoles={["user"]}
+              />
+            }
+          />
+          <Route
+            path="/student-profile-page"
+            element={
+              <ProtectedRoute
+                element={<StudentProfilePage />}
+                allowedRoles={["student"]}
               />
             }
           />
