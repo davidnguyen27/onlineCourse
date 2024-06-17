@@ -1,4 +1,4 @@
-const CourseCard: React.FC = () => {
+const StudentCourseCard: React.FC = () => {
   return (
     <article className="h-auto w-auto cursor-pointer rounded-md bg-slate-200">
       <div className="p-4">
@@ -34,4 +34,4 @@ const CourseCard: React.FC = () => {
   );
 };
 
-export default CourseCard;
+export default StudentCourseCard;

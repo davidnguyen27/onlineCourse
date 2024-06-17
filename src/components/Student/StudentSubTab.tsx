@@ -9,7 +9,7 @@ interface StudentProfileSubTabProps {
 
 const StudentProfileSubTab: React.FC<StudentProfileSubTabProps> = ({ activeTab, setActiveTab }) => {
   const AboutTabContent = () => (
-    <div>
+    <div className='ml-2 mt-2'>
       <h3 className="font-semibold rounded">Requirements</h3>
       <ul className="list-disc ml-4 text-gray-700 rounded">
         <li>Have a computer with Internet</li>

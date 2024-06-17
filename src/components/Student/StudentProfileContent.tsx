@@ -3,14 +3,14 @@ import StudentProfileBox from "./StudentProfileBox";
 import StudentProfileSubTab from "./StudentSubTab";
 
 
-const HelpContent = () => {
+const StudentProfileContent = () => {
     const [activeTab, setActiveTab] = useState('about');
     return (
         <div>
             <StudentProfileBox
             StudentProfileData={{
-                title: "How may we help you?",
-                description: "No no no"
+                title: "Tran Khanh Vinh",
+                description: "I'm a developer"
               }} 
             />
             <StudentProfileSubTab 
@@ -21,4 +21,4 @@ const HelpContent = () => {
     )
 }
 
-export default HelpContent;
+export default StudentProfileContent;
