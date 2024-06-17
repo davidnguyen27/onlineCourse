@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Layout, Table, Button } from 'antd';
+import { Layout, Table, Button, Form, Input, DatePicker, Select, Collapse } from 'antd';
 import Header from '../components/Layout/Header';
 import Sider from '../components/Layout/Sidebar';
 import Footer from '../components/Layout/Footer';
 
 const { Content } = Layout;
+const { Option } = Select;
+const { Panel } = Collapse;
 
 const CoursePage: React.FC = () => {
   const [courses, setCourses] = useState([
@@ -20,6 +22,18 @@ const CoursePage: React.FC = () => {
     { key: '2', itemNo: '002', title: 'Course Title Here', vendor: 'Rock William', category: 'C++', deliveryType: 'Download', price: '$20', purchaseDate: '20 March 2020' }
   ]);
 
+  const [discounts, setDiscounts] = useState([
+    {
+      key: '1',
+      itemNo: '01',
+      course: 'Course Title Here',
+      startDate: '02 November 2019',
+      endDate: '19 November 2019',
+      discount: '20%',
+      status: 'Active',
+    },
+  ]);
+
   const [activeTab, setActiveTab] = useState('myCourses');
 
   const handleCourseCreate = (course: { title: string; category: string; publishDate: string }) => {
@@ -32,6 +46,19 @@ const CoursePage: React.FC = () => {
       status: 'Active'
     };
     setCourses([...courses, newCourse]);
+  };
+
+  const handleDiscountCreate = (values: any) => {
+    const newDiscount = {
+      key: (discounts.length + 1).toString(),
+      itemNo: `0${discounts.length + 1}`,
+      course: values.course,
+      startDate: values.startDate.format('DD MMMM YYYY'),
+      endDate: values.endDate.format('DD MMMM YYYY'),
+      discount: `${values.discount}%`,
+      status: 'Active',
+    };
+    setDiscounts([...discounts, newDiscount]);
   };
 
   const courseColumns = [
@@ -75,6 +102,62 @@ const CoursePage: React.FC = () => {
     },
   ];
 
+  const discountColumns = [
+    { title: 'Item No.', dataIndex: 'itemNo', key: 'itemNo' },
+    { title: 'Course', dataIndex: 'course', key: 'course' },
+    { title: 'Start Date', dataIndex: 'startDate', key: 'startDate' },
+    { title: 'End Date', dataIndex: 'endDate', key: 'endDate' },
+    { title: 'Discount', dataIndex: 'discount', key: 'discount' },
+    { title: 'Status', dataIndex: 'status', key: 'status', render: (text) => <span className="text-red-500">{text}</span> },
+    {
+      title: 'Actions',
+      key: 'actions',
+      render: () => (
+        <div className="flex space-x-2">
+          <Button type="link">Edit</Button>
+          <Button type="link">Delete</Button>
+        </div>
+      ),
+    },
+  ];
+
+  const renderDiscountContent = () => {
+    return (
+      <div>
+        <Collapse>
+          <Panel header="New Discount" key="1">
+            <Form onFinish={handleDiscountCreate} layout="vertical">
+              <Form.Item name="course" label="Course" rules={[{ required: true, message: 'Please select a course' }]}>
+                <Select placeholder="Select Course">
+                  {courses.map((course) => (
+                    <Option key={course.key} value={course.title}>
+                      {course.title}
+                    </Option>
+                  ))}
+                </Select>
+              </Form.Item>
+              <Form.Item name="discount" label="Discount Amount" rules={[{ required: true, message: 'Please input the discount amount' }]}>
+                <Input placeholder="Percent (e.g. 20 for 20%)" />
+              </Form.Item>
+              <Form.Item name="startDate" label="Start Date" rules={[{ required: true, message: 'Please select the start date' }]}>
+                <DatePicker format="DD/MM/YYYY" />
+              </Form.Item>
+              <Form.Item name="endDate" label="End Date" rules={[{ required: true, message: 'Please select the end date' }]}>
+                <DatePicker format="DD/MM/YYYY" />
+              </Form.Item>
+              <Form.Item>
+                <Button type="primary" htmlType="submit">
+                  Create
+                </Button>
+              </Form.Item>
+            </Form>
+          </Panel>
+        </Collapse>
+        <Table dataSource={discounts} columns={discountColumns} />
+      </div>
+    );
+  };
+
   const renderPromotionsContent = () => {
     return (
       <div className="flex flex-col items-center justify-center h-full p-4">
@@ -95,7 +178,7 @@ const CoursePage: React.FC = () => {
       case 'upcomingCourses':
         return <div>Upcoming Courses content goes here</div>;
       case 'discounts':
-        return <div>Discounts content goes here</div>;
+        return renderDiscountContent();
       case 'promotions':
         return renderPromotionsContent();
       default:
@@ -113,7 +196,7 @@ const CoursePage: React.FC = () => {
           <Header onCourseCreate={handleCourseCreate} />
         </Layout.Header>
         <Content style={{ margin: '16px 16px', background: '#fff' }}>
-          <div className="mb-4 flex space-x-4">
+          <div className="mb-4 flex justify-center space-x-4">
             <Button type={activeTab === 'myCourses' ? 'primary' : 'default'} onClick={() => setActiveTab('myCourses')}>My Courses</Button>
             <Button type={activeTab === 'myPurchases' ? 'primary' : 'default'} onClick={() => setActiveTab('myPurchases')}>My Purchases</Button>
             <Button type={activeTab === 'upcomingCourses' ? 'primary' : 'default'} onClick={() => setActiveTab('upcomingCourses')}>Upcoming Courses</Button>
