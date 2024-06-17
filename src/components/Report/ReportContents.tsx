@@ -55,7 +55,6 @@ const ReportContents = () => {
           >
             Learn more about reporting content on Cursus.
           </a>
-          <i className="fa-solid fa-magnifying-glass search-icon mt-5"></i>
         </div>
       </div>
     </div>

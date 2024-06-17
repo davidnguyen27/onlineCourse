@@ -8,6 +8,7 @@ import SignUpPage from "../pages/User/SignUpPage";
 import UserManagePage from "../pages/Admin/UserManagePage";
 import ReportPage from "../pages/User/ReportPage";
 import FeedbackPage from "../pages/User/FeedbackPage";
+import SettingsPage from "../pages/User/SettingPage";
 
 interface ProtectedRouteProps {
   component: React.ComponentType<any>;
@@ -38,6 +39,8 @@ const AppRouter = () => {
         <Route path="/feedback" element={<FeedbackPage />} />
         <Route path="/help" element={<HelpPage />} />
         <Route path="/user-management" element={<UserManagePage />} />
+        <Route path="/settings" element={<SettingsPage />} />
+
         <Route
           path="/admin-page"
           element={withRoleProtection({
