@@ -8,9 +8,16 @@ import SignUpPage from "../pages/User/SignUpPage";
 import { AuthContext, AuthProvider } from "../app/context/AuthContext";
 import { useContext } from "react";
 import StudentPage from "../pages/User/StudentPage";
-import StudentHomePage from "../pages/Student/StudentHomePage";
+import CategoriesManagePage from "../pages/Admin/CategoriesManagePage";
+import UserManagePage from "../pages/Admin/UserManagePage";
+import InstructorManagePage from "../pages/Admin/InstructorManagePage";
 import StudentProfilePage from "../pages/Student/StudentProfilePage";
-import InstructorPage from "../pages/Instructor/InstructorPage";
+import StudentCourseDetailPage from "../pages/Student/StudentCourseDetailPage";
+import ReportPage from "../pages/User/ReportPage";
+import Cart from "../pages/User/Cart";
+import CheckOut from "../pages/User/CheckOut";
+import PaidMembershipPage from "../pages/User/PaidMembership";
+import StudentHomePage from "../pages/Student/StudentHomePage";
 
 interface ProtectedRouteProps {
   element: JSX.Element;
@@ -42,12 +49,40 @@ const AppRouter = () => {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
+          {/* Student */}
           <Route path="/" element={<HomePage />} />
           <Route path="sign-in" element={<SignInPage />} />
           <Route path="sign-up" element={<SignUpPage />} />
           <Route path="/detail" element={<DetailCoursePage />} />
           <Route path="/help-page" element={<HelpPage />} />
-          <Route path="/student-management" element={<StudentPage />} />
+          <Route path="/report-page" element={<ReportPage />} />
+          
+          <Route
+            path="/cart"
+            element={
+              <ProtectedRoute element={<Cart />} allowedRoles={["student"]} />
+            }
+          />
+          <Route
+            path="/checkout"
+            element={
+              <ProtectedRoute
+                element={<CheckOut />}
+                allowedRoles={["student"]}
+              />
+            }
+          />
+          <Route
+            path="/paid-membership"
+            element={
+              <ProtectedRoute
+                element={<PaidMembershipPage />}
+                allowedRoles={["student"]}
+              />
+            }
+          />
+
+          {/* Admin  */}
           <Route
             path="/admin-page"
             element={
@@ -57,15 +92,7 @@ const AppRouter = () => {
               />
             }
           />
-          <Route
-            path="/instructor-page"
-            element={
-              <ProtectedRoute
-                element={<InstructorPage />}
-                allowedRoles={["instructor"]}
-              />
-            }
-          />
+          
           <Route
             path="/student-page"
             element={
@@ -85,11 +112,24 @@ const AppRouter = () => {
             }
           />
           <Route
-            path="/"
+            path="/student-course-page"
             element={
-              <ProtectedRoute element={<HomePage />} allowedRoles={["user"]} />
+              <ProtectedRoute
+                element={<StudentCourseDetailPage />}
+                allowedRoles={["student"]}
+              />
             }
           />
+          <Route
+            path="/categories-management"
+            element={<CategoriesManagePage />}
+          />
+          <Route path="/user-management" element={<UserManagePage />} />
+          <Route
+            path="/instructor-management"
+            element={<InstructorManagePage />}
+          />
+          <Route path="/student-management" element={<StudentPage />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

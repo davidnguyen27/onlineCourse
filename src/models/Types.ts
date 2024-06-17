@@ -5,6 +5,18 @@ export type SiderContextType = {
   toggleSider: () => void;
 };
 
+export type User = {
+  email: string;
+  password: string;
+  role: string;
+};
+
+export type AuthContextType = {
+  user: User | null;
+  login: (email: string, password: string) => Promise<void>;
+  logout: () => void;
+};
+
 export type SiderProviderProps = {
   children: ReactNode;
 };

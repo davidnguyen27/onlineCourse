@@ -5,6 +5,7 @@ const Overview: React.FC = () => {
         <div className="flex items-center justify-between p-4">
           <div>
             <h2 className="text-xl font-semibold">Total Sales</h2>
+
             <h2 className="my-4 text-xl font-semibold">0</h2>
           </div>
           <div>
@@ -41,7 +42,7 @@ const Overview: React.FC = () => {
             <h2 className="my-4 text-xl font-semibold">0</h2>
           </div>
           <div>
-            <i className="fa-solid fa-book-open text-4xl"></i>
+            <i className="fa-solid fa-book-open text-4xl"></i>u
           </div>
         </div>
       </div>

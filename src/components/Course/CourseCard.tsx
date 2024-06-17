@@ -1,6 +1,18 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
 const CourseCard: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/detail");
+  };
+
   return (
-    <article className="h-auto w-auto cursor-pointer rounded-md bg-slate-200">
+    <article
+      className="h-auto w-auto cursor-pointer rounded-md bg-slate-200"
+      onClick={handleClick}
+    >
       <div className="p-4">
         <div>
           <img

@@ -15,13 +15,6 @@ const StudentSider: React.FC<{ className?: string }> = () => {
         key="1"
         icon={<Link to="/student-page"><i className="fa-solid fa-house"></i></Link>}
       >
-        Home
-      </Menu.Item>
-      <Menu.Item
-        className="hover:rounded-none hover:bg-amber-500 hover:text-black"
-        key="2"
-        icon={<Link to="/student-courses-page"><i className="fa-solid fa-address-card"></i></Link>}
-      >
         My Courses
       </Menu.Item>
       <SubMenu
@@ -43,22 +36,6 @@ const StudentSider: React.FC<{ className?: string }> = () => {
         icon={<Link to="/student-settings-page"><i className="fa-solid fa-gear"></i></Link>}
       >
         Setting
-      </Menu.Item>
-      <Menu.Item
-        className="hover:bg-amber-500"
-        hover:rounded-none
-        hover:text-black
-        key="10"
-        icon={<i className="fa-solid fa-circle-question"></i>}
-      >
-        Help
-      </Menu.Item>
-      <Menu.Item
-        className="hover:rounded-none hover:bg-amber-500 hover:text-black"
-        key="11"
-        icon={<Link to="/student-report-page"><i className="fa-solid fa-flag"></i></Link>}
-      >
-        Report
       </Menu.Item>
     </Menu>
   );

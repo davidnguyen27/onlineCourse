@@ -1,7 +1,7 @@
 import { Layout } from "antd";
 import Sider from "antd/es/layout/Sider";
 import { Content, Footer, Header } from "antd/es/layout/layout";
-import AppHeader from "../../components/Layout/AppHeader";
+import AppHeader from "../../components/Student/StudentHeader";
 import AppFooter from "../../components/Layout/AppFooter";
 import StudentSider from "../../components/Student/StudentSider";
 import { useSider } from "../../app/context/SiderContext";
