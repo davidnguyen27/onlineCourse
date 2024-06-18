@@ -1,22 +1,26 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import HomePage from "../pages/User/HomePage";
-import DetailCoursePage from "../pages/User/detailCoursePage";
-import HelpPage from "../pages/User/HelpPage";
-import AdminPage from "../pages/Admin/AdminPage";
-import SignInPage from "../pages/User/SignInPage";
-import SignUpPage from "../pages/User/SignUpPage";
+
 import { AuthContext, AuthProvider } from "../app/context/AuthContext";
 import { useContext } from "react";
-import StudentPage from "../pages/User/StudentPage";
-import CategoriesManagePage from "../pages/Admin/CategoriesManagePage";
-import UserManagePage from "../pages/Admin/UserManagePage";
-import InstructorManagePage from "../pages/Admin/InstructorManagePage";
+
 import StudentProfilePage from "../pages/Student/StudentProfilePage";
 import StudentCourseDetailPage from "../pages/Student/StudentCourseDetailPage";
-import ReportPage from "../pages/User/ReportPage";
-import Cart from "../pages/User/Cart";
-import CheckOut from "../pages/User/CheckOut";
-import PaidMembershipPage from "../pages/User/PaidMembership";
+
+import HomePage from "../pages/user/HomePage";
+import SignInPage from "../pages/user/SignInPage";
+import DetailCoursePage from "../pages/detailCoursePage";
+import SignUpPage from "../pages/user/SignUpPage";
+import HelpPage from "../pages/HelpPage";
+import ReportPage from "../pages/user/ReportPage";
+import Cart from "../pages/user/Cart";
+import CheckOut from "../pages/user/CheckOut";
+import PaidMembershipPage from "../pages/user/PaidMembership";
+import AdminPage from "../pages/admin/AdminPage";
+import CategoriesManagePage from "../pages/admin/CategoriesManagePage";
+import UserManagePage from "../pages/admin/UserManagePage";
+import InstructorManagePage from "../pages/admin/InstructorManagePage";
+import StudentPage from "../pages/user/StudentPage";
+import InstructorPage from "../pages/instructor/InstructorPage";
 
 interface ProtectedRouteProps {
   element: JSX.Element;
@@ -116,6 +120,15 @@ const AppRouter = () => {
           <Route
             path="/instructor-management"
             element={<InstructorManagePage />}
+          />
+          <Route
+            path="/instructor-page"
+            element={
+              <ProtectedRoute
+                element={<InstructorPage />}
+                allowedRoles={["instructor"]}
+              />
+            }
           />
           <Route path="/student-management" element={<StudentPage />} />
         </Routes>

@@ -3,8 +3,8 @@ import { Layout } from "antd";
 import Sider from "antd/es/layout/Sider";
 import { Header, Content, Footer } from "antd/es/layout/layout";
 import { AppHeader, AppFooter } from "../../components";
-import SiderInstructor from "../../components/Instructor/SiderInstructor";
 import Overview from "../../components/Admin/Overview";
+import SiderInstructor from "../../components/Instructor/SiderInstructor";
 
 const InstructorPage: React.FC = () => {
   const { collapsed } = useSider();

@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useSider } from "../../app/context/SiderContext";
 import { Dropdown, MenuProps, Space } from "antd";
 import { useAuth } from "../../app/context/AuthContext";
+import Cart from "../../pages/user/Cart";
 
 const AppHeader: React.FC = () => {
   const { toggleSider } = useSider();
@@ -13,6 +14,10 @@ const AppHeader: React.FC = () => {
   const handleLogout = () => {
     logout();
     navigate("/");
+  };
+
+  const handleCartClick = () => {
+    navigate("/cart");
   };
 
   const items: MenuProps["items"] = [
@@ -55,7 +60,7 @@ const AppHeader: React.FC = () => {
         </div>
       </div>
       <div className="styles-x-axis w-1/2 justify-end">
-        <div className="cart-styles">
+        <div className="cart-styles" onClick={handleCartClick}>
           <i className="fa-solid fa-cart-shopping"></i>
         </div>
         {user ? (
@@ -64,6 +69,7 @@ const AppHeader: React.FC = () => {
               <Space>
                 <img
                   src="https://i.pinimg.com/736x/18/2f/fe/182ffe44b2e0782e34370f6e21045825.jpg"
+                  alt="avatar"
                   className="h-12 w-12 rounded-full"
                 />
               </Space>
