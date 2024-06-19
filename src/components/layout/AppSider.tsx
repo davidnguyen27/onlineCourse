@@ -1,5 +1,4 @@
-import { Divider, Menu } from "antd";
-import { Footer } from "antd/es/layout/layout";
+import { Menu } from "antd";
 import SubMenu from "antd/es/menu/SubMenu";
 import { useNavigate } from "react-router-dom";
 
@@ -12,7 +11,7 @@ const AppSider: React.FC<{ className?: string }> = () => {
         mode="inline"
         defaultSelectedKeys={["1"]}
         defaultOpenKeys={["sub1"]}
-        className="bg-slate-200 text-sm"
+        className="bg-slate-200"
       >
         <Menu.Item
           className="hover:rounded-none hover:bg-amber-500 hover:text-black"
@@ -76,7 +75,7 @@ const AppSider: React.FC<{ className?: string }> = () => {
           className="hover:rounded-none hover:bg-amber-500 hover:text-black"
           key="9"
           icon={<i className="fa-solid fa-gear"></i>}
-          onClick={() => navigate("/settings-page")}
+          onClick={() => navigate("/settings")}
         >
           Setting
         </Menu.Item>
@@ -92,17 +91,11 @@ const AppSider: React.FC<{ className?: string }> = () => {
           className="hover:rounded-none hover:bg-amber-500 hover:text-black"
           key="11"
           icon={<i className="fa-solid fa-flag"></i>}
-          onClick={() => navigate("/report-page")}
+          onClick={() => navigate("/report")}
         >
           Report
         </Menu.Item>
       </Menu>
-      <Divider />
-      <Footer className="bg-slate-200 px-8 py-0 text-center">
-        <span className="text-xs font-light">
-          Copyright by FPT Education @2024
-        </span>
-      </Footer>
     </>
   );
 };

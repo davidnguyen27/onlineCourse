@@ -15,28 +15,13 @@ const AppHeader: React.FC = () => {
     navigate("/");
   };
 
-  const handleView = () => {
-    if (user?.role === "admin") {
-      navigate("/admin-profile-page");
-    } else if (user?.role === "instructor") {
-      navigate("/instructor-profile-page");
-    } else {
-      navigate("/student-profile-page");
-    }
-  };
-
   const items: MenuProps["items"] = [
     {
-      label: <a onClick={handleView}>Profile</a>,
+      label: <a href="#">Profile</a>,
       key: "0",
     },
     {
-      label:
-        user?.role === "admin" ? (
-          <a href="/admin-dashboard">Dashboard</a>
-        ) : (
-          <a href="#">My course</a>
-        ),
+      label: <a href="#">My course</a>,
       key: "1",
     },
     {
@@ -77,7 +62,10 @@ const AppHeader: React.FC = () => {
           <Dropdown menu={{ items }}>
             <a className="mr-9 flex" onClick={(e) => e.preventDefault()}>
               <Space>
-                <img src={user.image} className="h-12 w-12 rounded-full" />
+                <img
+                  src="https://i.pinimg.com/736x/18/2f/fe/182ffe44b2e0782e34370f6e21045825.jpg"
+                  className="h-12 w-12 rounded-full"
+                />
               </Space>
             </a>
           </Dropdown>

@@ -23,14 +23,14 @@ const FormSignIn = () => {
         sessionStorage.setItem("userRole", user.role);
         switch (user.role) {
           case "admin":
-            navigate("/admin-dashboard");
+            navigate("/admin-page");
             break;
 
           case "instructor":
-            navigate("/instructor-dashboard");
+            navigate("/instructor-page");
             break;
 
-          case "student":
+          case "user":
             navigate("/");
             break;
 
@@ -39,7 +39,7 @@ const FormSignIn = () => {
             break;
         }
       } else {
-        return alert("Email or password is wrong!");
+        console.log("Login failed");
       }
     } catch (error) {
       console.error("Unknown error: ", error);
