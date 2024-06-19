@@ -1,44 +1,26 @@
-import { Divider } from "antd";
+
 import { FormSignIn } from "../../components";
 
-const SignInPage = () => {
+export default function ExampleV3(): JSX.Element {
   return (
-    <div className="flex h-screen items-center justify-center">
-      <div className="w-1/2 rounded-lg bg-slate-200 p-8">
-        <h2 className="mb-5 text-center text-2xl font-bold">Welcome Back</h2>
-        <p className="mb-8 text-center text-base font-light">
-          Login To Your FPT Account!
-        </p>
-        <div className="my-4 flex cursor-pointer items-center justify-center">
-          <i className="fa-brands fa-facebook-f"></i>
-          <p className="ml-3">Continue with Facebook</p>
-        </div>
-        <div className="my-4 flex cursor-pointer items-center justify-center">
-          <i className="fa-brands fa-x-twitter"></i>
-          <p className="ml-3">Continue with Twitter</p>
-        </div>
-        <div className="my-4 flex cursor-pointer items-center justify-center">
-          <i className="fa-brands fa-google"></i>
-          <p className="ml-3">Continue with Google</p>
-        </div>
-        <FormSignIn />
-        <p className="text-center">
-          Or{" "}
-          <a href="#" className="text-amber-500 hover:underline">
-            Forgot password
-          </a>
-          .
-        </p>
-        <Divider />
-        <p className="text-center text-sm">
-          Don't have an account?{" "}
-          <a className="text-amber-500 hover:underline" href="/sign-up">
-            Sign Up
-          </a>
-        </p>
-      </div>
-    </div>
-  );
-};
+    <section className="h-screen">
+      <div className="container h-full">
+        <div className="gap-8 flex flex-wrap items-center">
+          {/* <!-- Left column container with background--> */}
+          <div className="mb-12 md:mb-0 md:w-6/12 lg:w-6/12">
+            <img
+              src="/public/image/image4.png"
+              className="w-full"
+              alt="Phone image"
+            />
+          </div>
 
-export default SignInPage;
+          {/* <!-- Right column container with form --> */}
+          <div className="md:w-8/12 lg:ml-6 lg:w-5/12">
+            <FormSignIn />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

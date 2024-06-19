@@ -6,7 +6,6 @@ import { useContext } from "react";
 import StudentProfilePage from "../pages/Student/StudentProfilePage";
 import StudentCourseDetailPage from "../pages/Student/StudentCourseDetailPage";
 
-import HomePage from "../pages/user/HomePage";
 import SignInPage from "../pages/user/SignInPage";
 import DetailCoursePage from "../pages/detailCoursePage";
 import SignUpPage from "../pages/user/SignUpPage";
@@ -21,6 +20,7 @@ import UserManagePage from "../pages/admin/UserManagePage";
 import InstructorManagePage from "../pages/admin/InstructorManagePage";
 import StudentPage from "../pages/user/StudentPage";
 import InstructorPage from "../pages/instructor/InstructorPage";
+import HomePage from "../pages/user/HomePage";
 
 interface ProtectedRouteProps {
   element: JSX.Element;

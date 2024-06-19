@@ -48,6 +48,41 @@ const SiderInstructor: React.FC<{ className?: string }> = () => {
         >
           Setting
         </Menu.Item>
+        <Menu.Item
+          className="hover:rounded-none hover:bg-amber-500 hover:text-black"
+          key="5"
+          icon={<i className="fa-solid fa-gear"></i>}
+        >
+          Setting
+        </Menu.Item>
+        <Menu.Item
+          className="hover:rounded-none hover:bg-amber-500 hover:text-black"
+          key="5"
+          icon={<i className="fa-solid fa-gear"></i>}
+        >
+          Setting
+        </Menu.Item>
+        <Menu.Item
+          className="hover:rounded-none hover:bg-amber-500 hover:text-black"
+          key="5"
+          icon={<i className="fa-solid fa-gear"></i>}
+        >
+          Setting
+        </Menu.Item>
+        <Menu.Item
+          className="hover:rounded-none hover:bg-amber-500 hover:text-black"
+          key="5"
+          icon={<i className="fa-solid fa-gear"></i>}
+        >
+          Setting
+        </Menu.Item>
+        <Menu.Item
+          className="hover:rounded-none hover:bg-amber-500 hover:text-black"
+          key="5"
+          icon={<i className="fa-solid fa-gear"></i>}
+        >
+          Setting
+        </Menu.Item>
       </Menu>
     </>
   );
