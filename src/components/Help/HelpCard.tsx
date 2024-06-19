@@ -7,7 +7,7 @@ const HelpCard: React.FC<HelpCardProps> = ({
   description,
 }) => {
   return (
-    <article className="ml-5 mt-10 w-72 cursor-pointer rounded-md bg-slate-200 drop-shadow-md transition ease-out hover:-translate-y-2 hover:shadow-md hover:delay-75">
+    <article className="ml-5 mt-10 w-72 cursor-pointer rounded-md bg-slate-200 drop-shadow-md">
       <div className="p-4 text-center">
         <div className="justify-items-center">
           <i className={iconClass}></i>

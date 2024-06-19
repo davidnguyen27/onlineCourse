@@ -29,7 +29,7 @@ const HomePage: React.FC = () => {
           collapsed={collapsed}
           collapsedWidth={0}
           trigger={null}
-          width={220}
+          width={230}
         >
           <AppSider
             className={`transition-all duration-75 ${collapsed ? "w-0" : "w-64"}`}

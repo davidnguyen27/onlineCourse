@@ -8,45 +8,47 @@ const SiderInstructor: React.FC<{ className?: string }> = () => {
     <>
       <Menu
         mode="inline"
-        defaultSelectedKeys={["1"]}
-        defaultOpenKeys={["sub1"]}
+        // defaultSelectedKeys={["1"]}
+        // defaultOpenKeys={["sub1"]}
         className="bg-slate-200"
       >
         <Menu.Item
           className="hover:rounded-none hover:bg-amber-500 hover:text-black"
           key="1"
-          icon={<i className="fa-solid fa-table-columns"></i>}
+          icon={<i className="fa-solid fa-chart-line"></i>}
+          onClick={() => navigate("/instructor-dashboard")}
         >
           Dashboard
         </Menu.Item>
         <Menu.Item
           className="hover:rounded-none hover:bg-amber-500 hover:text-black"
           key="2"
-          icon={<i className="fa-solid fa-chart-line"></i>}
+          icon={<i className="fa-solid fa-book-open"></i>}
+          onClick={() => navigate("/courses-management")}
         >
-          Analytics
+          Courses
         </Menu.Item>
         <Menu.Item
           className="hover:rounded-none hover:bg-amber-500 hover:text-black"
           key="3"
-          icon={<i className="fa-solid fa-layer-group"></i>}
+          icon={<i className="fa-solid fa-star"></i>}
         >
-          Categories
+          Reviews
         </Menu.Item>
         <Menu.Item
           className="hover:rounded-none hover:bg-amber-500 hover:text-black"
           key="4"
-          icon={<i className="fa-solid fa-user"></i>}
+          icon={<i className="fa-solid fa-dollar-sign"></i>}
           onClick={() => navigate("/user-management")}
         >
-          User
+          Earning
         </Menu.Item>
         <Menu.Item
           className="hover:rounded-none hover:bg-amber-500 hover:text-black"
           key="5"
-          icon={<i className="fa-solid fa-gear"></i>}
+          icon={<i className="fa-solid fa-wallet"></i>}
         >
-          Setting
+          Payout
         </Menu.Item>
       </Menu>
     </>

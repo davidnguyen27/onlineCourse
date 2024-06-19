@@ -4,7 +4,7 @@ const ReportContents = () => {
       <div className="-ml-5 -mr-3 -mt-5 flex items-center justify-center bg-gray-800 p-12">
         <div className="flex flex-col">
           <h2
-            className="rounded text-2xl font-bold text-white"
+            className="rounded text-2xl font-semibold text-white"
             style={{
               marginBottom: "0.5em",
               marginInlineStart: "40px",
@@ -13,7 +13,7 @@ const ReportContents = () => {
             Thanks for reporting!
           </h2>
           <h2
-            className="rounded text-white"
+            className="rounded text-sm font-light text-white"
             style={{
               marginBottom: "0.5em",
               marginInlineStart: "40px",
@@ -25,7 +25,7 @@ const ReportContents = () => {
             reviewed in line with the following guidelines:
           </h2>
           <h2
-            className="rounded text-white"
+            className="rounded text-sm font-light text-white"
             style={{
               marginBottom: "0.5em",
               marginInlineStart: "50px",
@@ -36,7 +36,7 @@ const ReportContents = () => {
             Edututs+.
           </h2>
           <h2
-            className="rounded text-white"
+            className="rounded text-sm font-light text-white"
             style={{
               marginBottom: "0.5em",
               marginInlineStart: "50px",
@@ -47,7 +47,7 @@ const ReportContents = () => {
             be age-restricted.
           </h2>
           <a
-            className="rounded text-white"
+            className="rounded text-sm font-light text-white"
             style={{
               marginBottom: "0.5em",
               marginInlineStart: "40px",
@@ -55,7 +55,6 @@ const ReportContents = () => {
           >
             Learn more about reporting content on Cursus.
           </a>
-          <i className="fa-solid fa-magnifying-glass search-icon mt-5"></i>
         </div>
       </div>
     </div>

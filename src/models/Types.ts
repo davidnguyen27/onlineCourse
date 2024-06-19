@@ -9,6 +9,13 @@ export type User = {
   email: string;
   password: string;
   role: string;
+  fullName: string;
+  dateOfBirth: string;
+  phoneNumber: string;
+  address: string;
+  registrationDate: string;
+  image: string;
+  status: boolean;
 };
 
 export type AuthContextType = {

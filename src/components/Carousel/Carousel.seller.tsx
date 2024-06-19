@@ -3,7 +3,7 @@ import CourseCard from "../Course/CourseCard";
 
 import "../../styles/customCarousel.css";
 
-import { responsiveItem } from "../../utils/Responsive.carouselitem";
+import { responsiveItem } from "../../const/Responsive.carouselitem";
 
 const CarouselSeller = () => {
   return (

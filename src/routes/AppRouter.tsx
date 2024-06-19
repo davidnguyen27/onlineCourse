@@ -9,14 +9,22 @@ import { AuthContext, AuthProvider } from "../app/context/AuthContext";
 import { useContext } from "react";
 import StudentPage from "../pages/User/StudentPage";
 import CategoriesManagePage from "../pages/Admin/CategoriesManagePage";
-import UserManagePage from "../pages/Admin/UserManagePage";
-import InstructorManagePage from "../pages/Admin/InstructorManagePage";
 import StudentProfilePage from "../pages/Student/StudentProfilePage";
 import StudentCourseDetailPage from "../pages/Student/StudentCourseDetailPage";
 import ReportPage from "../pages/User/ReportPage";
 import Cart from "../pages/User/Cart";
 import CheckOut from "../pages/User/CheckOut";
 import PaidMembershipPage from "../pages/User/PaidMembership";
+import ProfilePage from "../pages/Admin/ProfilePage";
+import InstructorPage from "../pages/Instructor/InstructorPage";
+import UserManagePage from "../pages/Admin/UserManagePage";
+import FeedBackManagePage from "../pages/Admin/FeedBackManagePage";
+import ReportManagePage from "../pages/Admin/ReportManagePage";
+import BlogManagePage from "../pages/Admin/BlogManagePage";
+import SettingsPage from "../pages/User/SettingPage";
+import CoursesCheckPage from "../pages/Admin/CoursesCheckPage";
+import CoursesManagePage from "../pages/Instructor/CoursesManagePage";
+import CreateCoursePage from "../pages/Instructor/CreateCoursePage";
 
 interface ProtectedRouteProps {
   element: JSX.Element;
@@ -48,13 +56,16 @@ const AppRouter = () => {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-          {/* Student */}
           <Route path="/" element={<HomePage />} />
           <Route path="sign-in" element={<SignInPage />} />
           <Route path="sign-up" element={<SignUpPage />} />
           <Route path="/detail" element={<DetailCoursePage />} />
-          <Route path="/help-page" element={<HelpPage />} />
           <Route path="/report-page" element={<ReportPage />} />
+          <Route path="/help-page" element={<HelpPage />} />
+          <Route path="/settings-page" element={<SettingsPage />} />
+
+          {/* Student */}
+          <Route path="/student-management" element={<StudentPage />} />
           <Route
             path="/view-detail"
             element={
@@ -88,17 +99,6 @@ const AppRouter = () => {
               />
             }
           />
-
-          {/* Admin  */}
-          <Route
-            path="/admin-page"
-            element={
-              <ProtectedRoute
-                element={<AdminPage />}
-                allowedRoles={["admin"]}
-              />
-            }
-          />
           <Route
             path="/student-profile-page"
             element={
@@ -108,16 +108,111 @@ const AppRouter = () => {
               />
             }
           />
+          {/* --- */}
+
+          {/* Admin  */}
+          <Route
+            path="/admin-dashboard"
+            element={
+              <ProtectedRoute
+                element={<AdminPage />}
+                allowedRoles={["admin"]}
+              />
+            }
+          />
+          <Route
+            path="/admin-profile-page"
+            element={
+              <ProtectedRoute
+                element={<ProfilePage />}
+                allowedRoles={["admin"]}
+              />
+            }
+          />
+          <Route
+            path="/users-management"
+            element={
+              <ProtectedRoute
+                element={<UserManagePage />}
+                allowedRoles={["admin"]}
+              />
+            }
+          />
           <Route
             path="/categories-management"
-            element={<CategoriesManagePage />}
+            element={
+              <ProtectedRoute
+                element={<CategoriesManagePage />}
+                allowedRoles={["admin"]}
+              />
+            }
           />
-          <Route path="/user-management" element={<UserManagePage />} />
           <Route
-            path="/instructor-management"
-            element={<InstructorManagePage />}
+            path="/feedbacks-management"
+            element={
+              <ProtectedRoute
+                element={<FeedBackManagePage />}
+                allowedRoles={["admin"]}
+              />
+            }
           />
-          <Route path="/student-management" element={<StudentPage />} />
+          <Route
+            path="/reports-management"
+            element={
+              <ProtectedRoute
+                element={<ReportManagePage />}
+                allowedRoles={["admin"]}
+              />
+            }
+          />
+          <Route
+            path="/blogs-management"
+            element={
+              <ProtectedRoute
+                element={<BlogManagePage />}
+                allowedRoles={["admin"]}
+              />
+            }
+          />
+          <Route
+            path="/courses-check"
+            element={
+              <ProtectedRoute
+                element={<CoursesCheckPage />}
+                allowedRoles={["admin"]}
+              />
+            }
+          />
+          {/* --- */}
+
+          {/* Instructor */}
+          <Route
+            path="/instructor-dashboard"
+            element={
+              <ProtectedRoute
+                element={<InstructorPage />}
+                allowedRoles={["instructor"]}
+              />
+            }
+          />
+          <Route
+            path="/courses-management"
+            element={
+              <ProtectedRoute
+                element={<CoursesManagePage />}
+                allowedRoles={["instructor"]}
+              />
+            }
+          />
+          <Route
+            path="/create-course"
+            element={
+              <ProtectedRoute
+                element={<CreateCoursePage />}
+                allowedRoles={["instructor"]}
+              />
+            }
+          />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

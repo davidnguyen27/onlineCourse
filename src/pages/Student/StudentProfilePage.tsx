@@ -3,9 +3,9 @@ import Sider from "antd/es/layout/Sider";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import AppHeader from "../../components/Layout/AppHeader";
 import AppFooter from "../../components/Layout/AppFooter";
-import StudentSider from "../../components/Student/StudentSider";
 import { useSider } from "../../app/context/SiderContext";
 import StudentProfileContent from "../../components/Student/StudentProfileContent";
+import { AppSider } from "../../components";
 
 const StudentProfilePage: React.FC = () => {
   const { collapsed } = useSider();
@@ -23,7 +23,7 @@ const StudentProfilePage: React.FC = () => {
           trigger={null}
           width={256}
         >
-          <StudentSider
+          <AppSider
             className={`transition-all duration-75 ${collapsed ? "w-0" : "w-64"}`}
           />
         </Sider>

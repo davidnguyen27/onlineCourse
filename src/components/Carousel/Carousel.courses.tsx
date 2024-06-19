@@ -1,6 +1,6 @@
 import { Carousel } from "antd";
 import CourseCard from "../Course/CourseCard";
-import { responsiveItem } from "../../utils/Responsive.carouselitem";
+import { responsiveItem } from "../../const/Responsive.carouselitem";
 
 const CarouselCourse = () => {
   return (

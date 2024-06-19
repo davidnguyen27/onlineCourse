@@ -1,10 +1,10 @@
 import { Layout } from "antd";
-import Sider from "antd/es/layout/Sider";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import AppHeader from "../../components/Layout/AppHeader";
 import AppFooter from "../../components/Layout/AppFooter";
-import StudentSider from "../../components/Student/StudentSider";
 import { useSider } from "../../app/context/SiderContext";
+import { AppSider } from "../../components";
+import Sider from "antd/es/layout/Sider";
 
 const StudentHomePage: React.FC = () => {
   const { collapsed } = useSider();
@@ -22,7 +22,7 @@ const StudentHomePage: React.FC = () => {
           trigger={null}
           width={256}
         >
-          <StudentSider
+          <AppSider
             className={`transition-all duration-75 ${collapsed ? "w-0" : "w-64"}`}
           />
         </Sider>

@@ -4,7 +4,7 @@ import { Content, Footer, Header } from "antd/es/layout/layout";
 import { AppFooter, AppHeader } from "../../components";
 import { useSider } from "../../app/context/SiderContext";
 import SiderAdmin from "../../components/Admin/SiderAdmin";
-import TableCategories from "../../components/Admin/TableCagories";
+import TableCategories from "../../components/Tables/TableCagories";
 
 const CategoriesManagePage = () => {
   const { collapsed } = useSider();
@@ -36,9 +36,22 @@ const CategoriesManagePage = () => {
                 <input
                   style={{ width: "100%" }}
                   type="text"
-                  placeholder="Search by phone..."
+                  placeholder="Search by category"
                   className="h-8 rounded-md pl-8 text-xs"
                 />
+              </div>
+              <div className="my-3 flex items-center justify-between">
+                <div className="flex items-center">
+                  <i className="fa-solid fa-filter"></i>
+                  <div className="mx-4">
+                    Category name:
+                    <select className="ml-2">
+                      <option value="">Web Development</option>
+                      <option value="instructor">Business</option>
+                      <option value="student">Design</option>
+                    </select>
+                  </div>
+                </div>
               </div>
               <TableCategories />
             </div>

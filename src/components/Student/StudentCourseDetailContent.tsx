@@ -2,10 +2,11 @@ import { useState } from "react";
 import StudentCourseBox from "../Student/StudentCourseBox";
 import CourseSubTab from "../Course/CourseSubTab";
 
-const DetailCourseContent = () => {
+const StudentDetailCourseContent = () => {
   const [activeTab, setActiveTab] = useState("about");
   return (
-    <div>
+    <div className="p-3 m-3 bg-gray-300 rounded-md">
+      <div className="p-1 bg-gray-100 rounded-md">
       <StudentCourseBox
         courseData={{
           title: "Course Tittle",
@@ -20,7 +21,8 @@ const DetailCourseContent = () => {
         }}
       />
     </div>
+    </div>
   );
 };
 
-export default DetailCourseContent;
+export default StudentDetailCourseContent;

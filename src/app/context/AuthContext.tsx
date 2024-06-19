@@ -12,11 +12,15 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const login = async (email: string, password: string) => {
     try {
-      const response = await axios.get<User[]>("/data/fakeUser.json");
+      const response = await axios.get<User[]>(
+        "https://665fc1c95425580055b0bf26.mockapi.io/users",
+      );
       const users = response.data;
+      console.log(users);
       const userData = users.find(
         (user) => user.email === email && user.password === password,
       );
+      console.log(userData);
 
       if (userData) {
         setUser(userData);

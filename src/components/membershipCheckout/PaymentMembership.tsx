@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../styles/index.css";
-import PaymentButton from "../checkout/PaymentButton";
+import PaymentButton from "../Checkout/PaymentButton";
 import PaymentForm from "../Form/PaymentForm";
 import Confirm from "./Confirm";
 

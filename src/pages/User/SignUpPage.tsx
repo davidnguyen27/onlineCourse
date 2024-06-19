@@ -3,8 +3,8 @@ import FormSignUp from "../../components/Form/FormSignUp";
 
 const SignUpPage = () => {
   return (
-    <div className="flex h-screen items-center justify-center">
-      <div className="max-h-dvh max-w-md rounded-lg bg-slate-200 p-8">
+    <div className="flex h-screen w-screen items-center justify-center bg-slate-300">
+      <div className="max-h-dvh max-w-xl rounded-lg bg-slate-200 p-8">
         <h2 className="mb-5 text-center text-2xl font-bold">
           Welcome to FPT Education
         </h2>

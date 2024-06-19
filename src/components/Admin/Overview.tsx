@@ -42,7 +42,7 @@ const Overview: React.FC = () => {
             <h2 className="my-4 text-xl font-semibold">0</h2>
           </div>
           <div>
-            <i className="fa-solid fa-book-open text-4xl"></i>u
+            <i className="fa-solid fa-book-open text-4xl"></i>
           </div>
         </div>
       </div>
