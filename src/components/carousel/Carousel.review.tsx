@@ -1,8 +1,8 @@
 import { Carousel } from 'antd';
-import '../styles/customCarousel.css';
-import InstructorCard from './InstructorCard';
+import '../../styles/customCarousel.css';
+import StudentReview from '../surface/StudentReview';
 
-const CarouselInstructor: React.FC = () => {
+const CarouselReview: React.FC = () => {
   return (
     <Carousel
       className="custom-carousel"
@@ -14,22 +14,22 @@ const CarouselInstructor: React.FC = () => {
       swipeToSlide
     >
       <div className="flex justify-center">
-        <InstructorCard />
+        <StudentReview />
       </div>
       <div className="flex justify-center">
-        <InstructorCard />
+        <StudentReview />
       </div>
       <div className="flex justify-center">
-        <InstructorCard />
+        <StudentReview />
       </div>
       <div className="flex justify-center">
-        <InstructorCard />
+        <StudentReview />
       </div>
       <div className="flex justify-center">
-        <InstructorCard />
+        <StudentReview />
       </div>
     </Carousel>
   );
 };
 
-export default CarouselInstructor;
+export default CarouselReview;

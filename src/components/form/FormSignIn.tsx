@@ -5,7 +5,7 @@ const FormSignIn = () => {
     <>
       <div className="p-8 bg-slate-200 rounded-lg">
         <h2 className="font-bold text-2xl text-center mb-5">Welcome Back</h2>
-        <p className="font-light text-base text-center mb-8">Login To Your FPT Account!</p>
+        <p className="font-light text-base text-center mb-8">Login To Your FKoi Account!</p>
         <div className="flex items-center justify-center bg-blue-500 cursor-pointer my-4">
           <i className="fa-brands fa-facebook-f"></i>
           <p className="ml-3">Continue with Facebook</p>

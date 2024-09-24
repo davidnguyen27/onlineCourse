@@ -4,7 +4,7 @@ const FormSignUp = () => {
   return (
     <>
       <div className="p-8 bg-slate-200 rounded-lg">
-        <h2 className="font-bold text-2xl text-center mb-5">Welcome to FPT Education</h2>
+        <h2 className="font-bold text-2xl text-center mb-5">Welcome to FKoi Shop</h2>
         <p className="font-light text-base text-center mb-8">Sign Up and Start Learning!</p>
         <Input className="my-4 text-sm" size="large" placeholder="Full Name" />
         <Input className="my-4 text-sm" size="large" placeholder="Email address" />
